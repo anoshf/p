@@ -1,9 +1,11 @@
 node_modules
 dist
-_site
+dist-ssr
 *.local
 .DS_Store
 .env
 .env.local
-.vite
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vite

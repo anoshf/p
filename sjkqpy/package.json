@@ -1,0 +1,23 @@
+{
+  "name": "anosh-ai-python-developer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Anosh Fallah — AI Python Developer portfolio site",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --host --port 4173"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
+}

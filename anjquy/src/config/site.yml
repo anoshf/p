@@ -1,0 +1,261 @@
+# ============================================================================
+#  SITE SETTINGS — identity, contact channels, SEO
+#  Profile: AI Cloud & Software Architect
+# ============================================================================
+#  This file controls HOW the site behaves.
+#  All written copy lives in content.yml. All colours live in themes.yml.
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# IDENTITY
+# ---------------------------------------------------------------------------
+identity:
+  name: "Anosh Fallah"
+  # Shown as the small logo mark in the header.
+  initials: "AF"
+  # The role this site targets. Drives the page title and the SEO metadata.
+  targetRole: "AI Cloud & Software Architect"
+  location: "San Diego, CA · Open to remote (US)"
+  # Photo lives in /public. Replace public/headshot.jpg with any square-ish
+  # image (600x600px or larger) and this path keeps working.
+  photo: "headshot.jpg"
+  photoAlt: "Anosh Fallah, AI Cloud & Software Architect"
+
+# ---------------------------------------------------------------------------
+# CONTACT
+# ---------------------------------------------------------------------------
+#  `methods` decides what appears on the Contact page:
+#
+#    methods: [form, sms]   -> message form AND text/call buttons   (both)
+#    methods: [form]        -> message form only                    (option 1)
+#    methods: [sms]         -> text/call buttons only               (option 2)
+#    methods: []            -> neither; the page shows a short notice
+#
+#  Your email address appears nowhere in this project and nowhere in the page
+#  source. The form posts to a third-party endpoint that forwards to your
+#  inbox, so recruiters never see the address.
+# ---------------------------------------------------------------------------
+contact:
+  methods: [form, sms]
+
+  form:
+    # SETUP (about two minutes, one time):
+    #   1. Create a free account at https://formspree.io
+    #   2. New form -> point it at the inbox you want messages delivered to
+    #   3. Formspree shows an endpoint like https://formspree.io/f/mabcdefg
+    #   4. Paste ONLY the part after /f/ below, e.g. endpointId: "mabcdefg"
+    #
+    # Leave endpointId empty and the form renders in a clearly-labelled
+    # "not connected yet" state rather than silently failing.
+    #
+    # provider: formspree | getform | custom
+    #   formspree -> https://formspree.io/f/<endpointId>
+    #   getform   -> https://getform.io/f/<endpointId>
+    #   custom    -> uses `customEndpoint` exactly as written
+    provider: formspree
+    endpointId: ""
+    customEndpoint: ""
+    heading: "Send a message"
+    blurb: "Tell me the role and I'll reply the same day. I read every message myself."
+    submitLabel: "Send message"
+    successMessage: "Message sent. I'll get back to you within one business day."
+    roleFieldLabel: "Role you're hiring for"
+    roleFieldPlaceholder: "e.g. Senior AI Cloud & Software Architect, remote"
+
+  sms:
+    # E.164 format. This number is NEVER rendered into the page: not as text
+    # and not as a link href. The sms:/tel: URL is assembled by JavaScript only
+    # at the moment someone taps the button, so scrapers reading the served
+    # HTML find nothing to harvest.
+    number: "+16193540646"
+    # Leave empty to keep the number off screen. Put a formatted number here
+    # only if you decide you want it printed.
+    display: ""
+    enableText: true
+    enableCall: true
+    heading: "Text or call"
+    blurb: "Fastest route. A text with the role and company gets a reply within the hour on weekdays."
+    # Pre-filled body of the message when someone taps "Send a text".
+    prefilledText: "Hi Anosh — saw your site. We're hiring an AI Cloud/Software Architect and "
+
+  # Optional. Paste a Calendly / Cal.com / SavvyCal link and set enabled: true
+  # to add a "Book an interview slot" button.
+  scheduling:
+    enabled: false
+    url: ""
+    label: "Book a 30-minute call"
+    blurb: "Pick any open slot — no back-and-forth."
+
+  # Response-time promise shown under the contact heading. "" hides it.
+  responsePromise: "Typical reply time: under 4 hours on weekdays."
+
+# ---------------------------------------------------------------------------
+# RESUME DOWNLOAD
+# ---------------------------------------------------------------------------
+# Drop your tailored PDF at public/resume.pdf, then set enabled: true.
+resume:
+  enabled: false
+  file: "resume.pdf"
+  label: "Download resume (PDF)"
+
+# ---------------------------------------------------------------------------
+# NAVIGATION
+# ---------------------------------------------------------------------------
+# Reorder or delete entries to change the header nav. Each `id` must match a
+# section the app knows about:
+#   highlights | skills | experience | projects | recommendations | credentials
+nav:
+  - { id: highlights,      label: "Impact" }
+  - { id: skills,          label: "Skills" }
+  - { id: experience,      label: "Experience" }
+  - { id: projects,        label: "Work" }
+  - { id: recommendations, label: "References" }
+  - { id: credentials,     label: "Credentials" }
+
+# ---------------------------------------------------------------------------
+# SEO / ATS DISCOVERABILITY
+# ---------------------------------------------------------------------------
+#  These feed the <title>, meta description, Open Graph tags, the JSON-LD
+#  Person schema, and the <noscript> fallback in index.html.
+#
+#  The noscript block mirrors content that is visible on the page, so crawlers
+#  and parsers that don't run JavaScript still read a complete and truthful
+#  summary. Nothing is asserted in metadata that a visitor cannot also read.
+#
+#  siteUrl: set this once you know the deployed address, e.g.
+#    siteUrl: "https://yourname.github.io/anosh-ai-cloud-architect"
+#  Leaving it empty simply omits the canonical and Open Graph URL tags.
+# ---------------------------------------------------------------------------
+seo:
+  siteUrl: ""
+  titleTemplate: "Anosh Fallah — AI Cloud & Software Architect"
+  description: >-
+    Anosh Fallah — AI Cloud & Software Architect with 18+ years designing multi-cloud AI and data architecture across AWS, Azure and GCP. Multi-region active-active systems, event-driven architecture, GenAI platform design, security and governance. 99.999% data consistency, 30% cost reduction.
+  # Fed into JSON-LD `knowsAbout` and the meta keywords tag. These are the
+  # terms recruiters and sourcing tools actually search for.
+  keywords:
+    - "AI Cloud & Software Architect"
+    - "AI Solutions Architect"
+    - "AI Architect"
+    - "Cloud Architect"
+    - "Solutions Architect"
+    - "Software Architect"
+    - "Enterprise Architect"
+    - "AI Cloud Architect"
+    - "Principal Architect"
+    - "Data Architect"
+    - "Technical Architect"
+    - "GenAI Architect"
+    - "AWS Solutions Architect"
+    - "Python"
+    - "SQL"
+    - "AWS"
+    - "Azure"
+    - "GCP"
+    - "Apache Airflow"
+    - "Apache Kafka"
+    - "PySpark"
+    - "Apache Spark"
+    - "Snowflake"
+    - "Databricks"
+    - "dbt"
+    - "Amazon Redshift"
+    - "AWS Glue"
+    - "Amazon Athena"
+    - "AWS Lambda"
+    - "Amazon S3"
+    - "Kubernetes"
+    - "Docker"
+    - "Terraform"
+    - "CloudFormation"
+    - "CI/CD"
+    - "REST APIs"
+    - "FastAPI"
+    - "PostgreSQL"
+    - "Data Pipelines"
+    - "ETL"
+    - "ELT"
+    - "Data Quality"
+    - "Data Governance"
+    - "Observability"
+    - "Microservices"
+    - "Distributed Systems"
+    - "GenAI"
+    - "LLM"
+    - "RAG"
+    - "Retrieval-Augmented Generation"
+    - "Vector Databases"
+    - "Embeddings"
+    - "LangChain"
+    - "MLOps"
+    - "Prompt Engineering"
+    - "AWS Bedrock"
+    - "AWS SageMaker"
+    - "Agentic AI"
+    - "Model Context Protocol"
+    - "OpenAI API"
+    - "Anthropic API"
+    - "Senior Data Engineer"
+    - "18 years experience"
+    - "Solution Architecture"
+    - "Reference Architecture"
+    - "Well-Architected Framework"
+    - "Multi-Cloud"
+    - "Hybrid Cloud"
+    - "Landing Zone"
+    - "Event-Driven Architecture"
+    - "Domain-Driven Design"
+    - "API Design"
+    - "System Design"
+    - "Scalability"
+    - "Fault Tolerance"
+    - "High Availability"
+    - "Disaster Recovery"
+    - "Multi-Region"
+    - "Active-Active"
+    - "Build vs Buy"
+    - "Technical Leadership"
+    - "Mentoring"
+    - "Stakeholder Management"
+    - "Cost Governance"
+    - "Security Architecture"
+    - "OAuth2"
+    - "SAML2"
+    - "OpenID Connect"
+    - "Zero Trust"
+    - "Encryption"
+    - "Azure OpenAI"
+    - "Google Vertex AI"
+    - "Microsoft Fabric"
+    - "AI Governance"
+    - "Model Selection"
+    - "Vendor Evaluation"
+    - "TOGAF"
+  jobTitleAliases:
+    - "AI Solutions Architect"
+    - "AI Architect"
+    - "Cloud Architect"
+    - "Solutions Architect"
+    - "Software Architect"
+    - "Enterprise Architect"
+    - "AI Cloud Architect"
+    - "Principal Architect"
+    - "Data Architect"
+    - "Technical Architect"
+    - "GenAI Architect"
+    - "AWS Solutions Architect"
+  ogImage: "headshot.jpg"
+
+# ---------------------------------------------------------------------------
+# BEHAVIOUR
+# ---------------------------------------------------------------------------
+options:
+  # Fade sections in as they scroll into view. Automatically disabled for
+  # visitors who prefer reduced motion.
+  animateOnScroll: true
+  # The green "open to <role> roles" pill in the hero.
+  showAvailabilityBadge: true
+  # Sticky call-to-action bar on phones, appearing after the hero.
+  showMobileStickyCta: true
+  # Footer credit line. "" hides it.
+  footerNote: ""

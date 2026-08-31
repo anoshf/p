@@ -1,0 +1,607 @@
+# ============================================================================
+#  CONTENT — AI DATA ENGINEER PROFILE
+#  Every word on the site lives in this file.
+# ============================================================================
+#  Editing rules
+#    * Keep the KEYS (the words before the colon). Change the VALUES.
+#    * Wrap any value containing a colon, #, or a leading number in "quotes".
+#    * Delete any list item you don't want; the section adapts.
+#    * Delete a whole top-level section to remove it from the page.
+#    * Indentation is two spaces. Never use tabs.
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# HERO — the first screen. This is what wins the 3-second scan.
+# Keep the headline under ~70 characters and every proof label under ~28.
+# ---------------------------------------------------------------------------
+hero:
+  availabilityBadge: "Open to AI Data Engineer roles · remote or San Diego"
+  eyebrow: "AI Data Engineer · 18+ years"
+  name: "Anosh Fallah"
+  headline: "I build the data pipelines that make AI systems trustworthy in production."
+  subheadline: >
+    Senior data engineer with 18+ years shipping batch and streaming pipelines, RAG and
+    LLM data workflows, and the quality controls that keep them honest. Currently building
+    GenAI-enabled data and backend services at Intuit; previously Medtronic, ADP, Disney and
+    Ticketmaster.
+  proofPoints:
+    - { value: "18+ yrs", label: "Production data engineering" }
+    - { value: "99.999%", label: "Data consistency, Kafka platform" }
+    - { value: "Sub-100ms", label: "Global search latency delivered" }
+    - { value: "10x", label: "Pipeline throughput improvement" }
+  primaryCta: { label: "Set up an interview", to: "/contact" }
+  secondaryCta: { label: "See the work", to: "#projects" }
+  quickFacts:
+    - "US work authorized"
+    - "AWS · Azure · GCP"
+    - "Available now"
+  techMarquee:
+    - "Python"
+    - "SQL"
+    - "Apache Airflow"
+    - "Apache Kafka"
+    - "PySpark"
+    - "Snowflake"
+    - "Databricks"
+    - "dbt"
+    - "AWS"
+    - "Kubernetes"
+    - "Terraform"
+    - "RAG"
+    - "Vector Databases"
+    - "LangChain"
+    - "AWS Bedrock"
+    - "Redshift"
+
+# ---------------------------------------------------------------------------
+# POSITIONING — the "why this person for this exact role" argument.
+# ---------------------------------------------------------------------------
+positioning:
+  heading: "Why I'm a fit for AI data engineering"
+  subheading: >
+    Most AI projects stall on data, not models. These are the three things I've been hired
+    to fix, repeatedly, for 18 years.
+  pillars:
+    - title: "AI-ready data, not just clean data"
+      body: >
+        I build the ingestion, chunking, embedding and retrieval paths that GenAI systems
+        actually depend on — plus the batch and streaming pipelines feeding ML training and
+        BI underneath them. At Intuit that means connecting LLM workflows to production data
+        access and secure application flows.
+      tags: ["RAG pipelines", "Vector databases", "Embeddings", "LangChain", "Semantic caching"]
+
+    - title: "Quality and governance built in, not bolted on"
+      body: >
+        Schema validation, anomaly detection, lineage, alerting and least-privilege access
+        designed in from the start. At Medtronic that meant PHI-safe logging, encryption and
+        audit trails on clinical analytics pipelines that ML, BI and operations all relied on.
+      tags: ["Data quality", "Observability", "Data governance", "PHI-safe logging", "Audit trails"]
+
+    - title: "Scale and cost, proven under load"
+      body: >
+        A 99.999%-consistency Kafka platform for enterprise financial events. Multi-region
+        systems at sub-100ms latency. 30% infrastructure cost reduction through Terraform and
+        EKS. I optimize partitioning, indexing, caching and queries because the bill and the
+        SLA are both my problem.
+      tags: ["Kafka", "Streaming", "Query tuning", "Cost optimization", "Terraform"]
+
+# ---------------------------------------------------------------------------
+# HIGHLIGHTS — quantified outcomes. Only numbers defensible in an interview.
+# ---------------------------------------------------------------------------
+highlights:
+  heading: "Measured outcomes"
+  subheading: "Numbers from shipped systems, each one attached to a named employer below."
+  items:
+    - value: "99.999%"
+      label: "Data consistency"
+      detail: "High-throughput Kafka platform for enterprise financial events at ADP, with disaster recovery."
+    - value: "45%"
+      label: "API latency reduction"
+      detail: "Migrating monolithic payroll applications to microservices on AWS."
+    - value: "30%"
+      label: "Infrastructure cost cut"
+      detail: "Cloud-native re-architecture on AWS EKS with Terraform."
+    - value: "99.99%"
+      label: "Uptime achieved"
+      detail: "Observability tooling that also cut incident resolution time by 60%."
+    - value: "10x"
+      label: "Throughput gain"
+      detail: "Presale and on-sale processing at Ticketmaster, reduced from hours to minutes."
+    - value: "Sub-100ms"
+      label: "Global search latency"
+      detail: "Multi-region, multi-CDN newsroom collaboration platform at Disney ABC."
+
+# ---------------------------------------------------------------------------
+# SKILLS — this section carries most of the ATS keyword weight.
+# Groups are ordered by what matters to THIS role. `primary: true` promotes one.
+# ---------------------------------------------------------------------------
+skills:
+  heading: "Technical skills"
+  subheading: >
+    Grouped the way a hiring manager reads them. Everything listed has been used on
+    production systems.
+  groups:
+    - name: "AI & LLM data engineering"
+      primary: true
+      note: "The layer between raw data and a working GenAI system."
+      items:
+        - "Retrieval-Augmented Generation (RAG)"
+        - "Vector databases"
+        - "Embeddings"
+        - "Chunking strategies"
+        - "Semantic search"
+        - "LangChain"
+        - "Llama"
+        - "Prompt engineering"
+        - "LLM evaluation"
+        - "Semantic caching"
+        - "Agentic architecture"
+        - "Model Context Protocol (MCP)"
+        - "OpenAI API"
+        - "Anthropic API"
+        - "AWS Bedrock"
+        - "AWS SageMaker"
+        - "MLOps"
+        - "GenAI cost optimization"
+        - "Unstructured data processing"
+
+    - name: "Pipelines & orchestration"
+      items:
+        - "Apache Airflow"
+        - "Apache Kafka"
+        - "AWS Kinesis"
+        - "PySpark"
+        - "Apache Spark"
+        - "dbt"
+        - "AWS Glue"
+        - "AWS EMR"
+        - "Batch processing"
+        - "Stream processing"
+        - "ETL / ELT"
+        - "Data modeling"
+        - "Feature tables"
+        - "Backfills"
+        - "Retries & dependency control"
+        - "RabbitMQ"
+        - "Celery"
+
+    - name: "Data platforms & warehouses"
+      items:
+        - "Snowflake"
+        - "Databricks"
+        - "Amazon Redshift"
+        - "Amazon Athena"
+        - "Amazon S3"
+        - "Data lakehouse"
+        - "PostgreSQL"
+        - "MySQL"
+        - "Oracle"
+        - "MSSQL"
+        - "MongoDB"
+        - "Cassandra"
+        - "DynamoDB"
+        - "AuroraDB"
+        - "Redis"
+        - "MariaDB"
+        - "GraphQL"
+
+    - name: "Data quality, governance & observability"
+      items:
+        - "Data quality testing"
+        - "Schema validation"
+        - "Anomaly detection"
+        - "Data governance"
+        - "Metrics, logs & tracing"
+        - "Dashboards & alerting"
+        - "Grafana"
+        - "Prometheus"
+        - "DataDog"
+        - "New Relic"
+        - "Audit trails"
+        - "PHI-safe logging"
+        - "IAM least privilege"
+        - "Encryption"
+        - "Incident response"
+        - "Runbooks"
+
+    - name: "Cloud & infrastructure"
+      items:
+        - "AWS"
+        - "Azure"
+        - "GCP"
+        - "Terraform"
+        - "CloudFormation"
+        - "Kubernetes"
+        - "Docker"
+        - "AWS Lambda"
+        - "ECS / EKS / Fargate"
+        - "EC2"
+        - "RDS"
+        - "SQS / SNS"
+        - "API Gateway"
+        - "CloudWatch"
+        - "Secrets Manager"
+        - "Parameter Store"
+        - "VPC"
+        - "IAM"
+        - "CI/CD"
+        - "Jenkins"
+        - "GitLab CI/CD"
+
+    - name: "Languages & APIs"
+      items:
+        - "Python"
+        - "SQL"
+        - "pandas"
+        - "NumPy"
+        - "FastAPI"
+        - "Flask"
+        - "REST APIs"
+        - "Node.js"
+        - "TypeScript"
+        - "JavaScript"
+        - "Go"
+        - "Java"
+        - "Shell / Bash"
+        - "C#"
+        - "Ruby"
+        - "Rust"
+        - "ReactJS"
+
+# ---------------------------------------------------------------------------
+# EXPERIENCE — reverse chronological. Outcome first, mechanism second.
+# ---------------------------------------------------------------------------
+experience:
+  heading: "Experience"
+  subheading: "18+ years across fintech, medtech, payroll, media and live entertainment."
+  roles:
+    - company: "Intuit"
+      title: "AI Data Engineer & Platform Engineer"
+      period: "Jan 2023 – Present"
+      summary: >
+        Building GenAI-enabled backend capabilities and the data workflows behind them —
+        connecting LLM workflows to production services, data access and secure application flows.
+      bullets:
+        - "Built GenAI-enabled backend capabilities and APIs connecting LLM workflows with production services, data access, and secure application flows"
+        - "Built production Python services and data workflows supporting reliable ingestion, transformation, APIs, and downstream consumers"
+        - "Developed Airflow orchestration patterns for batch workflows with retries, backfills, dependency controls, and data validation"
+        - "Improved data and API performance through caching, payload optimization, query tuning, and efficient service integration patterns"
+        - "Integrated AWS services including S3, Lambda, ECS, EC2, RDS, and SQS to support scalable application and data processing workflows"
+        - "Implemented monitoring, logging, alerting, debugging, and incident response practices to improve production service reliability"
+        - "Automated infrastructure with Terraform and CloudFormation, supporting repeatable deployments and consistent AWS environments"
+        - "Partnered across software, ML, analytics, and infrastructure teams to turn complex data needs into dependable production systems"
+      stack:
+        ["Python", "SQL", "AWS", "S3", "Lambda", "ECS", "EC2", "RDS", "SQS", "Airflow", "Kafka",
+         "REST APIs", "FastAPI", "Flask", "PostgreSQL", "Redis", "Docker", "Kubernetes",
+         "Terraform", "CloudFormation", "CloudWatch", "GitLab CI/CD", "DynamoDB", "Jenkins",
+         "OpenAI API", "Secrets Manager", "structured logging", "metrics", "alerting", "runbooks"]
+
+    - company: "Medtronic"
+      title: "Senior Data Engineer — Streaming & Feature Pipelines (Python, Spark)"
+      period: "Jan 2021 – Dec 2022"
+      summary: >
+        Architected clinical analytics pipelines combining batch and streaming data to deliver
+        trusted datasets for ML, BI and operational reporting, under strict privacy controls.
+      bullets:
+        - "Architected production Python data pipelines for batch and streaming ingestion, validation, transformation, and analytics at scale"
+        - "Delivered trusted, reusable datasets that fed ML, BI, and operational reporting across clinical and engineering teams"
+        - "Built streaming ingestion with Kafka, Kinesis, and AWS services to process operational events and near real-time workloads"
+        - "Designed AWS data platforms using S3, Redshift, Glue, Athena, Lambda, and RDS for scalable processing, storage, and analytics"
+        - "Implemented schema validation, monitoring, logging, alerting, and anomaly checks to improve data quality and pipeline reliability"
+        - "Established governance and privacy controls including PHI-safe logging, IAM least privilege, encryption, and audit trails"
+        - "Optimized workloads through partitioning, indexing, caching, parallel processing, and query tuning to improve performance and cost"
+        - "Developed Airflow workflows with retries, backfills, dependency controls, quality checks, and operational SLAs for reliable runs"
+      stack:
+        ["Python", "SQL", "Snowflake", "Redshift", "dbt", "Apache Airflow", "S3", "Kinesis",
+         "Kafka", "Glue", "EMR", "PostgreSQL", "Redis", "Terraform", "Kubernetes", "Docker",
+         "CI/CD", "Git", "data modeling", "feature tables", "data quality tests",
+         "anomaly detection", "observability", "encryption", "IAM least privilege",
+         "PHI-safe logging", "audit trails", "SSO (SAML/OAuth)"]
+
+    - company: "ADP"
+      title: "Lead Full-Stack Developer / Architect (Kafka, AWS)"
+      period: "Dec 2017 – Dec 2020"
+      summary: >
+        Designed a high-throughput Kafka platform for enterprise financial events and led the
+        migration of monolithic payroll capabilities to microservices on AWS.
+      bullets:
+        - "Designed a high-throughput financial data platform using Kafka with 99.999% data consistency and disaster recovery"
+        - "Migrated monolithic payroll applications to microservices, reducing API latency by 45% and increasing system throughput"
+        - "Developed and optimized GraphQL APIs with Aurora and DynamoDB for large-scale, performance-critical workloads"
+        - "Engineered cloud-native infrastructure on AWS EKS using Terraform, reducing operational costs by 30%"
+        - "Improved system reliability using observability tooling, achieving 99.99% uptime and 60% faster incident resolution"
+        - "Implemented TypeScript standards and component-based architecture, reducing production defects by 20%+"
+        - "Led frontend architecture using Next.js, React, and Vite to improve performance and development velocity"
+        - "Mentored junior and mid-level engineers and established architectural and coding best practices"
+      stack:
+        ["Kafka", "Spark", "Databricks", "AWS EKS", "Lambda", "Aurora", "DynamoDB", "CloudWatch",
+         "Secrets Manager", "Azure", "Terraform", "CloudFormation", "Kubernetes", "Docker",
+         "GraphQL", "Oracle", "MySQL", "MongoDB", "Redis", "TypeScript", "Java", "Spring Boot",
+         "React", "Node.js", "New Relic", "OpenID", "SAML"]
+
+    - company: "Disney ABC"
+      title: "Senior Full-Stack Developer / Architect (AWS, Distributed Systems)"
+      period: "Jul 2016 – Dec 2017"
+      summary: >
+        Architected a highly available, multi-region AWS collaboration platform for global
+        newsrooms delivering real-time content at sub-100ms search latency via multi-CDN delivery.
+      bullets:
+        - "Designed active-active, multi-region microservices with sub-100ms global latency for newsroom collaboration"
+        - "Engineered resilient data pipelines with Kafka and Cassandra for distributed event-driven systems"
+        - "Developed high-performance Apple Wallet APIs using Python, FastAPI, and autoscaling to achieve 10x speed improvements"
+        - "Integrated Python services with ServiceNow for automated L2 ticketing and improved incident response workflows"
+        - "Automated cloud infrastructure using Terraform and CloudFormation across AWS and Azure, reducing costs and provisioning time"
+        - "Implemented enterprise authentication using SAML2, OAuth2, and secure token lifecycle management"
+        - "Built an ABC app to manage weekly shows with ESB-driven event notifications and resilient multi-retry handling"
+      stack:
+        ["Python", "FastAPI", "Java", "Spring Boot", "Go", "Node.js", "React", "AWS ECS/EKS/RDS/S3",
+         "Aurora", "Cassandra", "Kafka", "MongoDB", "Docker", "Kubernetes", "Terraform",
+         "CloudFormation", "ELK", "New Relic", "JMeter", "Bash", "SAML2", "OAuth2"]
+
+    - company: "Live Nation / Ticketmaster"
+      title: "Senior Full-Stack Developer / Architect (AWS, Python)"
+      period: "Sep 2014 – Apr 2016"
+      summary: >
+        Built a globally scalable cloud platform converting physical tickets into secure Apple
+        Wallet passes, enabling mobile venue entry at high volume for millions of fans worldwide.
+      bullets:
+        - "Improved presale and on-sale system performance by 10x, reducing processing time from hours to minutes"
+        - "Designed dockerized EC2 microservices using AWS CloudFormation, ALB, S3, RDS, and centralized logging"
+        - "Implemented monitoring and alerting using Sumo Logic, New Relic, and Amazon CloudWatch"
+        - "Built Shell and Python automation scripts to simulate and compare API behavior across environments"
+        - "Optimized Java JARs with caching, timeout handling, and detailed application logging"
+        - "Standardized API error handling using proper HTTP status codes and structured JSON responses"
+        - "Reverse engineered undocumented applications and libraries, producing clear technical documentation"
+        - "Recognized by senior leadership for fast issue resolution and preventing business disruptions"
+      stack:
+        ["Python", "Java", "Spring Boot", "Go", "TypeScript", "ReactJS", "Angular", "Vue",
+         "RDS", "Oracle", "Aurora", "S3", "ECS", "EKS", "Docker", "Kubernetes", "Terraform",
+         "CloudFormation", "Sumo Logic", "New Relic", "CloudWatch", "Chef", "Puppet"]
+
+    - company: "Disney Parks & Resorts"
+      title: "Full-Stack Web Developer"
+      period: "Aug 2013 – Aug 2014"
+      summary: >
+        Owned the Disney World and Disneyland ticketing verticals end to end, from requirements
+        through release.
+      bullets:
+        - "Owned Disney World / Disneyland ticketing verticals, building new functionality from requirements to release"
+        - "Owned the entire web-ticketing flow: login, main page, ticket validation, assignment, confirmation, and service calls"
+        - "Created new API service calls and modules processing frontend validation via AJAX / JSON"
+        - "Code reviewed peers and participated in three-amigos sessions before project initiation"
+        - "Supervised and mentored co-workers, assigning priority tasks per the project plan"
+      stack:
+        ["Java", "Spring Boot", "Python", "PHP", "Node.js", "JavaScript", "AngularJS", "Oracle",
+         "MySQL", "JMeter", "Bash", "TDD", "JUnit", "Selenium", "AssertJ"]
+
+# ---------------------------------------------------------------------------
+# PROJECTS — case studies. Problem → approach → outcome is deliberate:
+# it is the structure interviewers are trained to listen for.
+# ---------------------------------------------------------------------------
+projects:
+  heading: "Selected work"
+  subheading: "Six systems, the problem each one solved, and what changed as a result."
+  items:
+    - title: "GenAI data and backend services"
+      org: "Intuit"
+      tagline: "Connecting LLM workflows to real production data, safely."
+      problem: >
+        LLM workflows needed access to production data and services without weakening security
+        boundaries or introducing unpredictable latency and cost.
+      approach: >
+        Built GenAI-enabled backend capabilities and APIs bridging LLM workflows to production
+        services and data access, with secure application flows, secrets handling, caching and
+        payload optimization. Orchestrated the supporting batch workflows in Airflow with
+        retries, backfills, dependency controls and data validation.
+      outcome: >
+        GenAI capabilities running against production data with reliability improved through
+        automated testing, caching, database resilience and secure secrets handling.
+      tags: ["GenAI", "LLM workflows", "Python", "Airflow", "AWS", "Semantic caching"]
+
+    - title: "Clinical analytics pipeline platform"
+      org: "Medtronic"
+      tagline: "Trusted datasets for ML, BI and operational reporting — under PHI constraints."
+      problem: >
+        Clinical analytics depended on data arriving from batch and streaming sources with
+        inconsistent quality, while privacy rules constrained how any of it could be logged or accessed.
+      approach: >
+        Architected Python pipelines combining batch and streaming ingestion on Kafka, Kinesis,
+        S3, Redshift, Glue and Athena. Modeled feature tables in Snowflake with dbt. Layered in
+        schema validation, anomaly detection, monitoring and alerting, plus PHI-safe logging,
+        IAM least privilege, encryption and audit trails.
+      outcome: >
+        Trusted, reusable datasets serving ML, BI and operational reporting, with data quality,
+        monitoring, governance and privacy controls that improved reliability of clinical
+        analytics and every downstream workflow.
+      tags: ["Streaming", "Snowflake", "dbt", "Data governance", "PHI-safe logging", "Airflow"]
+
+    - title: "Enterprise financial event platform"
+      org: "ADP"
+      tagline: "99.999% data consistency across enterprise payroll and financial events."
+      problem: >
+        Monolithic payroll systems coupled services tightly, limiting throughput and making
+        financial event delivery fragile.
+      approach: >
+        Designed a high-throughput Kafka platform with disaster recovery, then migrated
+        monolithic payroll capabilities to microservices on AWS EKS provisioned with Terraform.
+        Optimized GraphQL APIs over Aurora and DynamoDB for performance-critical workloads.
+      outcome: >
+        99.999% data consistency, 45% lower API latency, 30% lower infrastructure cost, and
+        99.99% uptime with 60% faster incident resolution.
+      tags: ["Kafka", "Microservices", "AWS EKS", "Terraform", "GraphQL", "Disaster recovery"]
+
+    - title: "Global newsroom collaboration platform"
+      org: "Disney ABC"
+      tagline: "Real-time content for global newsrooms at sub-100ms search latency."
+      problem: >
+        Newsrooms across regions needed real-time access to shared content with no tolerance for
+        regional outages or slow search.
+      approach: >
+        Architected a highly available, active-active multi-region AWS platform with multi-CDN
+        delivery, backed by resilient Kafka and Cassandra event pipelines and enterprise SAML2 /
+        OAuth2 authentication.
+      outcome: >
+        Real-time content delivery at sub-100ms search latency, globally, with regional failure
+        tolerance built into the architecture.
+      tags: ["Multi-region", "Kafka", "Cassandra", "Multi-CDN", "High availability"]
+
+    - title: "Mobile ticketing at stadium scale"
+      org: "Live Nation / Ticketmaster"
+      tagline: "Physical tickets to secure Apple Wallet passes, for millions of fans."
+      problem: >
+        Physical ticketing throttled venue entry, and presale and on-sale processing ran for
+        hours during peak demand.
+      approach: >
+        Built a globally scalable cloud platform converting physical tickets into secure Apple
+        Wallet passes on dockerized EC2 microservices provisioned by CloudFormation, with
+        centralized logging and monitoring via Sumo Logic, New Relic and CloudWatch.
+      outcome: >
+        Mobile venue entry at high volume for millions of fans worldwide, with presale and
+        on-sale performance improved 10x — hours reduced to minutes.
+      tags: ["Apple Wallet", "AWS", "Docker", "CloudFormation", "Performance", "Monitoring"]
+
+    - title: "Automated L2 incident workflows"
+      org: "Disney ABC"
+      tagline: "Python services wired into ServiceNow to shorten incident response."
+      problem: >
+        Level-2 incidents were routed and triaged manually, adding delay to every production issue.
+      approach: >
+        Integrated Python services with ServiceNow for automated ticketing, and built the
+        monitoring, logging and alerting that fed it.
+      outcome: >
+        Automated L2 ticketing with measurably improved incident response workflows.
+      tags: ["Python", "ServiceNow", "Automation", "Incident response", "Observability"]
+
+# ---------------------------------------------------------------------------
+# RECOMMENDATIONS — verbatim quotes from LinkedIn.
+# `featured: true` pins a quote to the top of the section.
+# ---------------------------------------------------------------------------
+recommendations:
+  heading: "What colleagues say"
+  subheading: >
+    Fifteen recommendations from managers, peers and clients across Intuit, Disney, ADP,
+    Ticketmaster and Ganz.
+  footnote: "All recommendations are reproduced verbatim."
+  items:
+    - name: "Bash Kadri"
+      title: "Senior Software Engineer (Python, Gen AI, APIs)"
+      relationship: "Worked with Anosh on the same team at Intuit · July 2025"
+      featured: true
+      quote: "I had the pleasure of starting at Intuit alongside Anosh, and we were both assigned to the same initial project. Throughout this time, Anosh demonstrated strong technical expertise and was always willing to share his knowledge, especially when it came to AWS, coding and deployment questions. He was consistently approachable and helpful, no matter how busy he was. Anosh's collaborative spirit and technical proficiency make him a valuable asset to any team, and I highly recommend him."
+
+    - name: "Ed Presz"
+      title: "Enterprise Data Executive"
+      relationship: "Worked with Anosh at Ticketmaster · June 2016"
+      featured: true
+      quote: "I collaborated with Anosh at Ticketmaster on several projects, and he's an effective Senior Software Engineer with a strong background in database design and performance skills."
+
+    - name: "Shiyin He"
+      title: "Software Engineer"
+      relationship: "Anosh was senior to Shiyin · July 2025"
+      quote: "During our time together, Anosh served as a technical lead on our Billing and Payment Modernization initiative — one of the most critical internal system overhauls in recent years. Anosh consistently demonstrated exceptional technical acumen and leadership. He was instrumental in designing and developing robust Java backend systems using Spring RESTful APIs, Hibernate, Oracle, and Kafka. His ability to architect solutions based on Spring MVC principles and leverage Spring IoC for managing dependencies was pivotal in establishing a clean, scalable, and maintainable codebase. Beyond his technical contributions, Anosh led by example — conducting requirements analysis, overseeing code and test walkthroughs, and collaborating across teams with clarity and purpose. His deep involvement throughout the software development lifecycle, from requirement gathering through development and deployment, ensured that the project met both its technical and business goals. What stood out most was Anosh's ability to translate complex technical challenges into structured, thoughtful solutions, all while supporting and mentoring team members. He has a rare balance of hands-on engineering skills and leadership maturity, making him a key asset in any high-performing team. I highly recommend Anosh for any role that requires strong technical leadership, reliability, and collaborative spirit."
+
+    - name: "Colin Gray"
+      title: "Director, AI & Foundations Engineering — Disney Ad Platforms"
+      relationship: "Managed Anosh directly at Disney ABC · June 2025"
+      quote: "I had the opportunity to manage Anosh during our time at Disney ABC, where he was a strong contributor to several key projects. He consistently brought a thoughtful, solutions-oriented approach and played an important role on the team. Anosh is a capable full-stack engineer with a solid technical foundation and a collaborative mindset. I appreciated his work ethic and would be happy to work with him again in the future."
+
+    - name: "Adrian Aguirre"
+      title: "Lead Software Engineer"
+      relationship: "Worked with Anosh on the same team at Disney · July 2025"
+      quote: "I had the opportunity to work closely with Anosh on several key projects at Disney, where he served as the main technical lead. Anosh was actively involved in our daily scrums and played a pivotal role in leading the software development efforts, some of which he seamlessly handed off to me for further implementation. He consistently demonstrated strong technical expertise and was a pleasure to work with. Anosh regularly proposed meaningful improvements and collaborated effectively with QA, DevOps, and the architecture teams to ensure smooth project delivery. He's a quick learner, a true team player, and someone who brings a collaborative spirit to every project. I highly recommend Anosh for any role that requires technical leadership and cross-functional teamwork."
+
+    - name: "Eddie Rodriguez"
+      title: "Manager, Software Engineering — Disney Streaming/Hulu"
+      relationship: "Worked with Anosh at Disney ABC · July 2025"
+      quote: "I had the pleasure of working with Anosh at Disney ABC, where he consistently impressed me with his breath of knowledge and his work ethic. Anosh is a team player, always ready to lend a hand and support colleagues. He picks up new concepts incredibly fast and consistently delivered high-quality code and solutions to interesting problems. Any team would be lucky to have Anosh."
+
+    - name: "Grant Cahill"
+      title: "Director of Product — Activision"
+      relationship: "Worked with Anosh on the same team · October 2018"
+      quote: "Anosh is a talented engineer who is always willing to put in the extra effort to make things happen. When challenging problems arise, Anosh is able to look at that problem and come up with a creative solution when it appears there is no solution available. In fact, I can recall specific instances when I needed Anosh to develop and execute a unique solution to onboard users to our application that had never been done before at Disney and Anosh provided a solution that was immediately put into service. Additionally, Anosh is able to adapt to the needs of the team and provide support and direction as needed. It is this flexibility and ability to adapt that makes Anosh an extremely valuable developer on any team. Building on this flexibility, due to Anosh's calm and inviting demeanor, I could always rely on Anosh to help onboard new developers and trust that they would get up to speed quickly. I highly recommend Anosh for future technical leadership roles and look forward to crossing paths with him again in the future."
+
+    - name: "Justin Pham"
+      title: "Senior Manager, Decision Rules PMCS — RBC"
+      relationship: "Worked with Anosh on the same team at Ganz · November 2011"
+      quote: "I had worked with Anosh as senior software developer on many projects at Ganz. He demonstrated excellent software design and coding skills, an eargeness to quickly learn and apply new methologies, frameworks and progamming languages. Anosh is an invaluable team player who is very knowledgable, creative and supportive. I would love working with Anosh again."
+
+    - name: "Peter Halferty"
+      title: "Senior Portal Developer — York University"
+      relationship: "Worked with Anosh on the same team · May 2012"
+      quote: "Anosh is a talented developer with an excellent focus on detail and ensuring the problem is properly understood."
+
+    - name: "Yasmine Khalil"
+      title: "Strategic Client Development, Product & Business Operations"
+      relationship: "Was senior to Anosh at Ticketmaster · July 2016"
+      quote: "Dependable, efficient & smart. Three important characteristics I would use to define Anosh & his contribution to Ticketmaster. Whenever there was a project that needed his team's attention, he was on it. Much appreciate when time is of the essence and we want fan's mobile experience to be A+. It was a pleasure working with Anosh."
+
+    - name: "Deepika Moudgil"
+      title: "Business Analyst · Certified AWS Cloud Practitioner · CSM"
+      relationship: "Worked with Anosh on the same team at Ganz · November 2012"
+      quote: "Anosh was one of the most dedicated professionals through his work at Ganz. Anosh was fantastic to work with. He is an efficient, ambitious and careful strategist. He is an experienced, detail oriented employee with lots of knowledge in his field."
+
+    - name: "Renee Webster"
+      title: "Creative Thinker, Multi-Tasker & Problem Solver"
+      relationship: "Managed Anosh directly · November 2011"
+      quote: "Anosh has the ability to adapt well to the ever changing technical environment, shifting priorities and constantly evolving requirements. He is conscientious and has the ability to work as part of a team and is willing and able to support his peers. This all makes him an essential and an important ingredient to any project team. Anosh seeks out responsibility and follows through with tasks to completion. I would work with Anosh again in a heartbeat."
+
+    - name: "Bogdan Zinko"
+      title: "Senior eLearning Developer — GP Canada Co."
+      relationship: "Worked with Anosh at Ganz · November 2012"
+      quote: "Anosh was one of the most dedicated developers while at Ganz. Working with him was great, he is an efficient, well informed, experienced developer."
+
+    - name: "M. Ryan Khosravi"
+      title: "President"
+      relationship: "Was Anosh's client · May 2012"
+      quote: "Anosh performed an extra ordinary project for me in a limited time. He was very approachable to reach, for any question or ongoing updates. He was extremly patient to describe technical aspects of project. I found him very knowledgable and he always had creative ideas that made the result go beyond my expectation. I am very happy to know him and highly recommend him without any reservation."
+
+    - name: "Simon Grantham"
+      title: "Engineering Manager (retired)"
+      relationship: "Managed Anosh directly · October 2012"
+      quote: "Anosh is a skilled developer. He is always committed and works very hard to produce a good product. I recommend him."
+
+
+# ---------------------------------------------------------------------------
+# CREDENTIALS
+# ---------------------------------------------------------------------------
+credentials:
+  heading: "Credentials"
+  subheading: ""
+  education:
+    - degree: "Bachelor's Degree, Software Engineering"
+      school: "Lakehead University"
+      year: ""
+  certifications:
+    - name: "GenAI & LLM data engineering"
+      issuer: "RAG pipelines, vector databases, embeddings, LLM evaluation, semantic caching"
+    - name: "AWS data platform engineering"
+      issuer: "S3, Redshift, Glue, Athena, Lambda, EMR, Kinesis, SageMaker, Bedrock"
+    - name: "Streaming & orchestration"
+      issuer: "Apache Kafka, Kinesis, Apache Airflow, Spark, PySpark, dbt"
+    - name: "Data governance & privacy"
+      issuer: "PHI-safe logging, IAM least privilege, encryption, audit trails, SSO"
+
+# ---------------------------------------------------------------------------
+# CONTACT PAGE
+# ---------------------------------------------------------------------------
+contactPage:
+  heading: "Let's talk about the role"
+  intro: >
+    If you're hiring an AI Data Engineer, send over the role and I'll tell you honestly
+    whether I'm the right fit — including when I'm not. Text is fastest.
+  whatToExpect:
+    - "A same-day reply on weekdays"
+    - "A straight answer on fit before we book anything"
+    - "Happy to walk through any system on this page in detail"
+    - "Available for a technical screen on short notice"
+  privacyNote: "Your message goes straight to my inbox. No newsletter, no list, no forwarding."
+
+# ---------------------------------------------------------------------------
+# CLOSING CTA — the band above the footer.
+# ---------------------------------------------------------------------------
+closing:
+  heading: "Hiring an AI Data Engineer?"
+  body: >
+    18+ years of production data engineering, currently building GenAI data and backend
+    services at Intuit. Tell me about the role and I'll tell you if I'm the right person for it.
+  ctaLabel: "Set up an interview"
