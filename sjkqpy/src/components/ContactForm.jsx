@@ -1,21 +1,14 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { IconCheck, IconArrowRight } from './Icons'
 import { site, content, get, clean } from '../lib/config'
 
-/** Builds the POST target from site.yml without ever putting an email address
- *  in the project. Returns '' when the form hasn't been connected yet. */
-function resolveEndpoint() {
-  const provider = String(get(site, 'contact.form.provider', 'formspree')).toLowerCase()
-  const id = clean(get(site, 'contact.form.endpointId'), '')
-  const custom = clean(get(site, 'contact.form.customEndpoint'), '')
-  if (provider === 'custom') return custom
-  if (!id) return ''
-  if (provider === 'getform') return `https://getform.io/f/${id}`
-  return `https://formspree.io/f/${id}`
-}
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+const TITLE = 'sjkqpy'
 
 export default function ContactForm() {
-  const endpoint = resolveEndpoint()
   const cfg = get(site, 'contact.form', {}) || {}
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [error, setError] = useState('')
@@ -25,43 +18,57 @@ export default function ContactForm() {
     const form = event.currentTarget
     const data = new FormData(form)
 
-    // Honeypot: real people never fill a field they cannot see.
+    // Honeypot
     if (data.get('_gotcha')) {
       setStatus('sent')
       return
     }
 
-    if (!endpoint) {
-      setStatus('error')
-      setError(
-        'This form is not connected to an inbox yet. Add your form endpoint id to src/config/site.yml (contact.form.endpointId) and redeploy.'
-      )
-      return
+    const company = data.get('company') || ''
+    const phone = data.get('phone') || ''
+    const role = data.get('role') || ''
+    const replyTo = data.get('reply_to') || ''
+
+    let senderIp = ''
+    try {
+      const ipRes = await fetch('https://api.ipify.org?format=json')
+      const ipData = await ipRes.json()
+      senderIp = ipData.ip || ''
+    } catch {
+      // non-critical
     }
+
+    const details = [
+      company && `Company: ${company}`,
+      phone && `Phone: ${phone}`,
+      role && `Role: ${role}`,
+      replyTo && `Email: ${replyTo}`,
+      senderIp && `IP: ${senderIp}`,
+    ]
+      .filter(Boolean)
+      .join('\n')
 
     setStatus('sending')
     setError('')
 
     try {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      })
-      if (res.ok) {
-        setStatus('sent')
-        form.reset()
-      } else {
-        const body = await res.json().catch(() => ({}))
-        setStatus('error')
-        setError(
-          body?.errors?.[0]?.message ||
-            'The message could not be sent. Please try the text option instead.'
-        )
-      }
-    } catch {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: data.get('from_name'),
+          reply_to: data.get('reply_to'),
+          message: data.get('message'),
+          details,
+          title: TITLE,
+        },
+        { publicKey: PUBLIC_KEY }
+      )
+      setStatus('sent')
+      form.reset()
+    } catch (err) {
       setStatus('error')
-      setError('Network error. Please check your connection, or use the text option instead.')
+      setError(err?.text || 'The message could not be sent. Please try again.')
     }
   }
 
@@ -85,18 +92,10 @@ export default function ContactForm() {
 
   return (
     <form className="form" onSubmit={onSubmit} noValidate={false}>
-      {!endpoint && (
-        <p className="form-notice" role="note">
-          <strong>Form not connected yet.</strong> Add your endpoint id to{' '}
-          <code>src/config/site.yml</code> → <code>contact.form.endpointId</code>. Until then the
-          text and call buttons still work.
-        </p>
-      )}
-
       <div className="form__row">
         <div className="field">
           <label htmlFor="cf-name">Your name</label>
-          <input id="cf-name" name="name" type="text" required autoComplete="name" />
+          <input id="cf-name" name="from_name" type="text" required autoComplete="name" />
         </div>
         <div className="field">
           <label htmlFor="cf-company">Company</label>
@@ -109,7 +108,7 @@ export default function ContactForm() {
           <label htmlFor="cf-email">Your email</label>
           <input
             id="cf-email"
-            name="email"
+            name="reply_to"
             type="email"
             required
             autoComplete="email"
@@ -134,13 +133,7 @@ export default function ContactForm() {
 
       <div className="field">
         <label htmlFor="cf-message">Message</label>
-        <textarea
-          id="cf-message"
-          name="message"
-          rows="5"
-          required
-          placeholder="A sentence or two about the role and the team is plenty."
-        />
+        <textarea id="cf-message" name="message" rows="5" required />
       </div>
 
       {/* Honeypot — hidden from people, irresistible to bots. */}
@@ -148,13 +141,6 @@ export default function ContactForm() {
         <label htmlFor="cf-gotcha">Leave this field empty</label>
         <input id="cf-gotcha" type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
       </div>
-
-      {/* Gives the notification email a useful subject line. */}
-      <input
-        type="hidden"
-        name="_subject"
-        value={`Interview enquiry — ${clean(get(site, 'identity.targetRole'), 'portfolio site')}`}
-      />
 
       {status === 'error' && (
         <p className="form-error" role="alert">

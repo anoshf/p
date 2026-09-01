@@ -5,14 +5,13 @@ import { content, hasItems, clean } from '../lib/config'
 
 const INITIAL_SHOWN = 6
 
+function firstNameOf(name = '') {
+  return name.trim().split(/\s+/)[0] || name
+}
+
 function initialsOf(name = '') {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join('')
-    .toUpperCase()
+  const first = firstNameOf(name)
+  return first[0]?.toUpperCase() || ''
 }
 
 function Quote({ item, featured }) {
@@ -46,7 +45,7 @@ function Quote({ item, featured }) {
           {initialsOf(clean(item.name))}
         </span>
         <span className="rec__meta">
-          <span className="rec__name">{clean(item.name)}</span>
+          <span className="rec__name">{firstNameOf(clean(item.name))}</span>
           {clean(item.title) && <span className="rec__title">{clean(item.title)}</span>}
           {clean(item.relationship) && (
             <span className="rec__rel">{clean(item.relationship)}</span>

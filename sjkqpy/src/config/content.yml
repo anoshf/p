@@ -580,15 +580,8 @@ credentials:
 # CONTACT PAGE
 # ---------------------------------------------------------------------------
 contactPage:
-  heading: "Let's talk about the role"
-  intro: >
-    If you're hiring an AI Python Developer, send over the role and I'll tell you honestly
-    whether I'm the right fit — including when I'm not. Text is fastest.
-  whatToExpect:
-    - "A same-day reply on weekdays"
-    - "A straight answer on fit before we book anything"
-    - "Happy to walk through any service on this page in detail"
-    - "Available for a live coding screen on short notice"
+  heading: "Contact me"
+  intro: "Use the form below to send a message directly, or reach out directly."
   privacyNote: "Your message goes straight to my inbox. No newsletter, no list, no forwarding."
 
 # ---------------------------------------------------------------------------

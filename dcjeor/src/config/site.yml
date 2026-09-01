@@ -36,7 +36,7 @@ identity:
 #  inbox, so recruiters never see the address.
 # ---------------------------------------------------------------------------
 contact:
-  methods: [form, sms]
+  methods: [form]
 
   form:
     # SETUP (about two minutes, one time):
