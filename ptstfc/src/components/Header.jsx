@@ -103,7 +103,7 @@ export default function Header({ themeProps }) {
             </li>
           </ul>
           <Link to="/contact" className="btn btn--lg btn--block" onClick={() => setMenuOpen(false)}>
-            Set up an interview
+            Contact me
           </Link>
         </div>
       )}

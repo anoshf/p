@@ -36,7 +36,7 @@
 #  background, muted text ≥ 4.5:1, and every accent/contrast pair ≥ 4.5:1.
 # ============================================================================
 
-defaultTheme: light-beige
+defaultTheme: soft-gray
 
 # Show the theme switcher in the header. Set to false to lock the site to
 # `defaultTheme` and hide the control entirely.

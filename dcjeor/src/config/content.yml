@@ -29,7 +29,7 @@ hero:
     - { value: "99.999%", label: "Data consistency, Kafka platform" }
     - { value: "Sub-100ms", label: "Global search latency delivered" }
     - { value: "10x", label: "Pipeline throughput improvement" }
-  primaryCta: { label: "Set up an interview", to: "/contact" }
+  primaryCta: { label: "Contact me", to: "/contact" }
   secondaryCta: { label: "See the work", to: "#projects" }
   quickFacts:
     - "US work authorized"
@@ -597,4 +597,4 @@ closing:
   body: >
     18+ years of production data engineering, currently building GenAI data and backend
     services at Intuit. Tell me about the role and I'll tell you if I'm the right person for it.
-  ctaLabel: "Set up an interview"
+  ctaLabel: "Contact me"

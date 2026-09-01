@@ -29,7 +29,7 @@ hero:
     - { value: "Sub-100ms", label: "Global multi-region latency" }
     - { value: "30%", label: "Infrastructure cost reduction" }
     - { value: "18+ yrs", label: "Architecture & delivery" }
-  primaryCta: { label: "Set up an interview", to: "/contact" }
+  primaryCta: { label: "Contact me", to: "/contact" }
   secondaryCta: { label: "See the work", to: "#projects" }
   quickFacts:
     - "US work authorized"
@@ -601,4 +601,4 @@ closing:
   body: >
     18+ years designing systems across AWS, Azure and GCP — and still writing the code that
     proves the design works. Tell me about the role and I'll tell you if I'm the right person.
-  ctaLabel: "Set up an interview"
+  ctaLabel: "Contact me"

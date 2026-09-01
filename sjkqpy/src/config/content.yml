@@ -27,7 +27,7 @@ hero:
     - { value: "45%", label: "API latency reduction" }
     - { value: "99.99%", label: "Service uptime" }
     - { value: "18+ yrs", label: "Production engineering" }
-  primaryCta: { label: "Set up an interview", to: "/contact" }
+  primaryCta: { label: "Contact me", to: "/contact" }
   secondaryCta: { label: "See the work", to: "#projects" }
   quickFacts:
     - "US work authorized"
@@ -592,4 +592,4 @@ closing:
   body: >
     18+ years of production Python, currently building GenAI backend capabilities and APIs at
     Intuit. Tell me about the role and I'll tell you if I'm the right person for it.
-  ctaLabel: "Set up an interview"
+  ctaLabel: "Contact me"

@@ -27,7 +27,7 @@ hero:
     - { value: "60%", label: "Faster incident resolution" }
     - { value: "30%", label: "Infrastructure cost cut" }
     - { value: "18+ yrs", label: "Production platform work" }
-  primaryCta: { label: "Set up an interview", to: "/contact" }
+  primaryCta: { label: "Contact me", to: "/contact" }
   secondaryCta: { label: "See the work", to: "#projects" }
   quickFacts:
     - "US work authorized"
@@ -589,4 +589,4 @@ closing:
   body: >
     18+ years keeping production systems up, observable and affordable — now applied to GenAI
     workloads at Intuit. Tell me about the role and I'll tell you if I'm the right person for it.
-  ctaLabel: "Set up an interview"
+  ctaLabel: "Contact me"

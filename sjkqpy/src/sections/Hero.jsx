@@ -19,7 +19,7 @@ export default function Hero() {
   const quickFacts = (hasItems(h.quickFacts) ? h.quickFacts : []).map(clean).filter(Boolean)
   const marquee = (hasItems(h.techMarquee) ? h.techMarquee : []).map(clean).filter(Boolean)
 
-  const primary = h.primaryCta || { label: 'Set up an interview', to: '/contact' }
+  const primary = h.primaryCta || { label: 'Contact me', to: '/contact' }
   const secondary = h.secondaryCta
 
   const scrollTo = (e, hash) => {
@@ -89,7 +89,7 @@ export default function Hero() {
 
           <Reveal className="hero__actions" delay={180}>
             <Link to={primary.to || '/contact'} className="btn btn--lg">
-              {clean(primary.label, 'Set up an interview')}
+              {clean(primary.label, 'Contact me')}
               <IconArrowRight className="btn__icon" />
             </Link>
 

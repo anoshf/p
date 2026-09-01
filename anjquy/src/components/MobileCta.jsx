@@ -22,7 +22,7 @@ export default function MobileCta() {
   return (
     <div className={`mobile-cta ${show ? 'is-visible' : ''}`} aria-hidden={!show}>
       <Link to="/contact" className="btn btn--block" tabIndex={show ? 0 : -1}>
-        Set up an interview
+        Contact me
       </Link>
     </div>
   )
