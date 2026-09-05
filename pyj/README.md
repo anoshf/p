@@ -1,6 +1,6 @@
-# Anosh Fallah — AI Data Engineer
+# Anosh Fallah — AI Python Developer
 
-A single-page React site targeted at **AI Data Engineer** roles. No backend, no database, no
+A single-page React site targeted at **AI Python Developer** roles. No backend, no database, no
 build-time secrets. Every word, colour and setting lives in three YAML files, so updating the
 site never means touching React code.
 
@@ -47,7 +47,7 @@ That's the whole toolchain. There is nothing else to install or configure.
 ## 2. What's in here
 
 ```
-anosh-ai-data-engineer/
+anosh-ai-python-developer/
 ├── src/
 │   ├── config/
 │   │   ├── content.yml     ← ALL the words on the site
@@ -294,16 +294,17 @@ in the source of any page.
 
 ## 8. Deploying to GitHub Pages
 
-**This folder is one of four sites inside a single repository.** You don't deploy it on its
-own — the workflow at the repository root builds all four and publishes them together.
+**This folder is one of five sites inside a single repository.** You don't deploy it on its
+own — the workflow at the repository root builds all five and publishes them together.
 
 ```
 YOUR-USERNAME.github.io/
-├── .github/workflows/deploy.yml   ← builds all four, publishes once
-├── anjquy/   AI Cloud & Software Architect  →  /anjquy/
-├── ptstfc/   AI Platform Engineer           →  /ptstfc/
-├── sjkqpy/   AI Python Developer            →  /sjkqpy/
-├── dcjeor/   AI Data Engineer               →  /dcjeor/
+├── .github/workflows/deploy.yml   ← builds all five, publishes once
+├── anj/      AI Cloud & Software Architect  →  /anj/
+├── dts/      AI Platform Engineer           →  /dts/
+├── pyj/      AI Python Developer            →  /pyj/
+├── dcr/      AI Data Engineer               →  /dcr/
+├── wnx/      Full-Stack Web Developer       →  /wnx/
 └── root/index.html                          →  /
 ```
 
@@ -311,19 +312,19 @@ To publish a change you made in this folder:
 
 ```bash
 git add .
-git commit -m "Update dcjeor content"
+git commit -m "Update pyj content"
 git push
 ```
 
-The workflow rebuilds all four sites and republishes. This site lands at:
+The workflow rebuilds all five sites and republishes. This site lands at:
 
 ```
-https://YOUR-USERNAME.github.io/dcjeor/
+https://YOUR-USERNAME.github.io/pyj/
 ```
 
 Full deployment instructions, including first-time setup, are in the **README at the repository
 root**. Building this folder locally (`npm run dev`) works exactly as described in section 1 and
-does not require the other three.
+does not require the other four.
 
 ### After the first deploy
 
@@ -331,7 +332,7 @@ Set the URL in `src/config/site.yml` so link previews and canonical tags work:
 
 ```yaml
 seo:
-  siteUrl: "https://YOUR-USERNAME.github.io/dcjeor"
+  siteUrl: "https://YOUR-USERNAME.github.io/pyj"
 ```
 
 

@@ -1,0 +1,226 @@
+# ============================================================================
+#  SITE SETTINGS — identity, contact channels, SEO
+#  Profile: Full-Stack Web Developer
+# ============================================================================
+#  This file controls HOW the site behaves.
+#  All written copy lives in content.yml. All colours live in themes.yml.
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# IDENTITY
+# ---------------------------------------------------------------------------
+identity:
+  name: "Anosh Fallah"
+  # Shown as the small logo mark in the header.
+  initials: "AF"
+  # The role this site targets. Drives the page title and the SEO metadata.
+  targetRole: "Full-Stack Web Developer"
+  location: "San Diego, CA · Open to remote (US)"
+  # Photo lives in /public. Replace public/headshot.jpg with any square-ish
+  # image (600x600px or larger) and this path keeps working.
+  photo: "headshot.jpg"
+  photoAlt: "Anosh Fallah, Full-Stack Web Developer"
+
+# ---------------------------------------------------------------------------
+# CONTACT
+# ---------------------------------------------------------------------------
+#  `methods` decides what appears on the Contact page:
+#
+#    methods: [form, sms]   -> message form AND text/call buttons   (both)
+#    methods: [form]        -> message form only                    (option 1)
+#    methods: [sms]         -> text/call buttons only               (option 2)
+#    methods: []            -> neither; the page shows a short notice
+#
+#  Your email address appears nowhere in this project and nowhere in the page
+#  source. The form posts to a third-party endpoint that forwards to your
+#  inbox, so recruiters never see the address.
+# ---------------------------------------------------------------------------
+contact:
+  methods: [form]
+
+  form:
+    # SETUP (about two minutes, one time):
+    #   1. Create a free account at https://formspree.io
+    #   2. New form -> point it at the inbox you want messages delivered to
+    #   3. Formspree shows an endpoint like https://formspree.io/f/mabcdefg
+    #   4. Paste ONLY the part after /f/ below, e.g. endpointId: "mabcdefg"
+    #
+    # Leave endpointId empty and the form renders in a clearly-labelled
+    # "not connected yet" state rather than silently failing.
+    #
+    # provider: formspree | getform | custom
+    #   formspree -> https://formspree.io/f/<endpointId>
+    #   getform   -> https://getform.io/f/<endpointId>
+    #   custom    -> uses `customEndpoint` exactly as written
+    provider: formspree
+    endpointId: ""
+    customEndpoint: ""
+    heading: "Send a message"
+    blurb: "Tell me the role and I'll reply the same day. I read every message myself."
+    submitLabel: "Send message"
+    successMessage: "Message sent. I'll get back to you within one business day."
+    roleFieldLabel: "Role you're hiring for"
+    roleFieldPlaceholder: "e.g. Senior Full-Stack Web Developer, remote"
+
+  sms:
+    # E.164 format. This number is NEVER rendered into the page: not as text
+    # and not as a link href. The sms:/tel: URL is assembled by JavaScript only
+    # at the moment someone taps the button, so scrapers reading the served
+    # HTML find nothing to harvest.
+    number: "+16193540646"
+    # Leave empty to keep the number off screen. Put a formatted number here
+    # only if you decide you want it printed.
+    display: ""
+    enableText: true
+    enableCall: true
+    heading: "Text or call"
+    blurb: "Fastest route. A text with the role and company gets a reply within the hour on weekdays."
+    # Pre-filled body of the message when someone taps "Send a text".
+    prefilledText: "Hi Anosh — saw your site. We're hiring a Full-Stack Web Developer and "
+
+  # Optional. Paste a Calendly / Cal.com / SavvyCal link and set enabled: true
+  # to add a "Book an interview slot" button.
+  scheduling:
+    enabled: false
+    url: ""
+    label: "Book a 30-minute call"
+    blurb: "Pick any open slot — no back-and-forth."
+
+  # Response-time promise shown under the contact heading. "" hides it.
+  responsePromise: "Typical reply time: under 4 hours on weekdays."
+
+# ---------------------------------------------------------------------------
+# RESUME DOWNLOAD
+# ---------------------------------------------------------------------------
+# Drop your tailored PDF at public/resume.pdf, then set enabled: true.
+resume:
+  enabled: false
+  file: "resume.pdf"
+  label: "Download resume (PDF)"
+
+# ---------------------------------------------------------------------------
+# NAVIGATION
+# ---------------------------------------------------------------------------
+# Reorder or delete entries to change the header nav. Each `id` must match a
+# section the app knows about:
+#   highlights | skills | experience | projects | recommendations | credentials
+nav:
+  - { id: highlights,      label: "Impact" }
+  - { id: skills,          label: "Skills" }
+  - { id: experience,      label: "Experience" }
+  - { id: projects,        label: "Work" }
+  - { id: recommendations, label: "References" }
+  - { id: credentials,     label: "Credentials" }
+
+# ---------------------------------------------------------------------------
+# SEO / ATS DISCOVERABILITY
+# ---------------------------------------------------------------------------
+#  These feed the <title>, meta description, Open Graph tags, the JSON-LD
+#  Person schema, and the <noscript> fallback in index.html.
+#
+#  The noscript block mirrors content that is visible on the page, so crawlers
+#  and parsers that don't run JavaScript still read a complete and truthful
+#  summary. Nothing is asserted in metadata that a visitor cannot also read.
+#
+#  siteUrl: set this once you know the deployed address, e.g.
+#    siteUrl: "https://yourname.github.io/wnx"
+#  Leaving it empty simply omits the canonical and Open Graph URL tags.
+# ---------------------------------------------------------------------------
+seo:
+  siteUrl: ""
+  titleTemplate: "Anosh Fallah — Full-Stack Web Developer"
+  description: >-
+    Anosh Fallah — Senior Full-Stack Web Developer with 15+ years shipping production sites and APIs: React, Next.js, TypeScript on the frontend; Python, Node.js, Java, Go, C# and Ruby/PHP on the backend. 10x API speed improvements, 60s-to-4s load time cuts, live sites built end to end.
+  # Fed into JSON-LD `knowsAbout` and the meta keywords tag. These are the
+  # terms recruiters and sourcing tools actually search for.
+  keywords:
+    - "Full-Stack Web Developer"
+    - "Full Stack Developer"
+    - "Senior Web Developer"
+    - "Frontend Developer"
+    - "Backend Developer"
+    - "React Developer"
+    - "Next.js Developer"
+    - "TypeScript Developer"
+    - "Node.js Developer"
+    - "Python Developer"
+    - "Java Developer"
+    - "Go Developer"
+    - "C# Developer"
+    - "Ruby Developer"
+    - "PHP Developer"
+    - "Software Engineer"
+    - "Web Application Developer"
+    - "React"
+    - "Next.js"
+    - "Angular"
+    - "Vue"
+    - "TypeScript"
+    - "JavaScript"
+    - "Node.js"
+    - "Express"
+    - "Python"
+    - "FastAPI"
+    - "Flask"
+    - "Django"
+    - "Java"
+    - "Spring Boot"
+    - "Go"
+    - "Golang"
+    - "C#"
+    - "ASP.NET Core"
+    - "Ruby on Rails"
+    - "PHP"
+    - "Laravel"
+    - "REST APIs"
+    - "GraphQL"
+    - "Microservices"
+    - "PostgreSQL"
+    - "MySQL"
+    - "MongoDB"
+    - "Redis"
+    - "AWS"
+    - "Azure"
+    - "GCP"
+    - "Docker"
+    - "Kubernetes"
+    - "Terraform"
+    - "CI/CD"
+    - "GenAI"
+    - "LLM"
+    - "RAG"
+    - "LangChain"
+    - "OpenAI API"
+    - "Anthropic API"
+    - "AWS Bedrock"
+    - "Responsive Design"
+    - "Web Accessibility"
+    - "SEO"
+    - "Performance Optimization"
+    - "15 years experience"
+    - "Full Stack Architect"
+    - "Web Application Architecture"
+  jobTitleAliases:
+    - "Full-Stack Web Developer"
+    - "Full Stack Developer"
+    - "Senior Web Developer"
+    - "Frontend Developer"
+    - "Backend Developer"
+    - "React Developer"
+    - "Software Engineer"
+    - "Web Application Developer"
+  ogImage: "headshot.jpg"
+
+# ---------------------------------------------------------------------------
+# BEHAVIOUR
+# ---------------------------------------------------------------------------
+options:
+  # Fade sections in as they scroll into view. Automatically disabled for
+  # visitors who prefer reduced motion.
+  animateOnScroll: true
+  # The green "open to <role> roles" pill in the hero.
+  showAvailabilityBadge: true
+  # Sticky call-to-action bar on phones, appearing after the hero.
+  showMobileStickyCta: true
+  # Footer credit line. "" hides it.
+  footerNote: ""

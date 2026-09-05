@@ -1,15 +1,17 @@
-# Builds all four role sites and publishes them as one GitHub Pages deployment.
+# Builds all six role sites and publishes them as one GitHub Pages deployment.
 #
-#   anjquy/  →  https://<username>.github.io/anjquy/   AI Cloud & Software Architect
-#   ptstfc/  →  https://<username>.github.io/ptstfc/   AI Platform Engineer
-#   sjkqpy/  →  https://<username>.github.io/sjkqpy/   AI Python Developer
-#   dcjeor/  →  https://<username>.github.io/dcjeor/   AI Data Engineer
+#   anj/     →  https://<username>.github.io/anj/      AI Cloud & Software Architect
+#   dts/     →  https://<username>.github.io/dts/      AI Platform Engineer
+#   pyj/     →  https://<username>.github.io/pyj/      AI Python Developer
+#   dcr/     →  https://<username>.github.io/dcr/      AI Data Engineer
+#   wnx/     →  https://<username>.github.io/wnx/      Full-Stack Web Developer
+#   spx/     →  https://<username>.github.io/spx/      Backend & Software Developer
 #   root/index.html  →  https://<username>.github.io/
 #
 # One-time setup in the repository:
 #   Settings → Pages → Build and deployment → Source: "GitHub Actions"
 #
-# After that, every push to main rebuilds and republishes all four.
+# After that, every push to main rebuilds and republishes all six.
 name: Build and deploy role sites
 
 on:
@@ -39,11 +41,11 @@ jobs:
           cache: npm
           cache-dependency-path: '*/package-lock.json'
 
-      - name: Build all four sites
+      - name: Build all six sites
         run: |
           set -euo pipefail
           mkdir -p _site
-          for folder in anjquy ptstfc sjkqpy dcjeor; do
+          for folder in anj dts pyj dcr wnx spx; do
             echo "::group::Building $folder"
             npm ci --prefix "$folder"
             npm run build --prefix "$folder"

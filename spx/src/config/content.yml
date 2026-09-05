@@ -1,0 +1,649 @@
+# ============================================================================
+#  CONTENT — BACKEND & SOFTWARE DEVELOPER PROFILE
+#  Every word on the site lives in this file.
+# ============================================================================
+#  Editing rules
+#    * Keep the KEYS (the words before the colon). Change the VALUES.
+#    * Wrap any value containing a colon, #, or a leading number in "quotes".
+#    * Delete any list item you don't want; the section adapts.
+#    * Delete a whole top-level section to remove it from the page.
+#    * Indentation is two spaces. Never use tabs.
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# HERO — the first screen. This is what wins the 3-second scan.
+# ---------------------------------------------------------------------------
+hero:
+  availabilityBadge: "Open to Backend / Software Developer roles · remote or San Diego"
+  eyebrow: "Backend & Software Developer · 15+ years"
+  name: "Anosh Fallah"
+  headline: "Backend-focused software developer who ships production APIs in seven languages."
+  subheadline: >
+    15+ years designing, building and optimizing scalable server-side systems: REST and GraphQL
+    APIs, event-driven services and cloud infrastructure in Node.js, Python, Java, Go, C#, Ruby
+    and PHP. Currently building backend services and GenAI-enabled APIs at Intuit.
+  proofPoints:
+    - { value: "93%", label: "Backend performance improvement" }
+    - { value: "7", label: "Backend languages shipped in production" }
+    - { value: "99.99%", label: "Service uptime" }
+    - { value: "15+ yrs", label: "Backend & platform engineering" }
+  primaryCta: { label: "Contact me", to: "/contact" }
+  secondaryCta: { label: "See the work", to: "#projects" }
+  quickFacts:
+    - "US work authorized"
+    - "AWS · Azure · GCP"
+    - "Available now"
+  techMarquee:
+    - "Node.js"
+    - "Python"
+    - "Java"
+    - "Go"
+    - "C#"
+    - "Ruby"
+    - "PHP"
+    - "FastAPI"
+    - "Spring Boot"
+    - "GraphQL"
+    - "Kafka"
+    - "PostgreSQL"
+    - "Redis"
+    - "Docker"
+    - "Kubernetes"
+    - "AWS Lambda"
+
+# ---------------------------------------------------------------------------
+# POSITIONING — the "why this person for this exact role" argument.
+# ---------------------------------------------------------------------------
+positioning:
+  heading: "Why I'm a fit for backend & software development work"
+  subheading: >
+    A team that hires me for backend work isn't locked into one language. I've shipped
+    production APIs and services in seven of them, under real deadlines, for 15+ years.
+  pillars:
+    - title: "Backend APIs in whatever language the job needs"
+      body: >
+        Production REST and GraphQL services in Node.js/Express, Python (FastAPI/Django), Java
+        (Spring Boot), Go, C# (ASP.NET), Ruby (Rails) and PHP (Laravel) — not a single-language
+        specialist bolting on a second skill, but someone who's shipped all seven under deadline.
+      tags: ["Node.js", "Python", "Java", "Go", "C#", "Ruby", "PHP", "REST", "GraphQL"]
+
+    - title: "Performance and reliability work with numbers attached"
+      body: >
+        93% backend performance improvement through caching and database optimization at
+        Medtronic. 35% data performance gain migrating REST to GraphQL at Intuit. 45% lower API
+        latency through a microservices migration at ADP. I profile before I optimize and
+        measure after.
+      tags: ["Caching", "Query tuning", "Profiling", "Redis", "PostgreSQL", "Observability"]
+
+    - title: "Cloud infrastructure and CI/CD, not just application code"
+      body: >
+        Serverless deployments on AWS Lambda and API Gateway with 99.99% uptime, Kubernetes and
+        Terraform for continuous deployment, and CI/CD pipelines in Jenkins, GitLab and GitHub
+        Actions that ship code safely and often.
+      tags: ["AWS", "Kubernetes", "Terraform", "Docker", "CI/CD", "Serverless"]
+
+# ---------------------------------------------------------------------------
+# HIGHLIGHTS — quantified outcomes.
+# ---------------------------------------------------------------------------
+highlights:
+  heading: "Measured outcomes"
+  subheading: "Numbers from shipped backend systems, each one attached to a named employer below."
+  items:
+    - value: "93%"
+      label: "Backend performance improvement"
+      detail: "Caching and database optimization (Redis/PostgreSQL) on a Medtronic patient data platform."
+    - value: "35%"
+      label: "Data performance improvement"
+      detail: "REST-to-GraphQL migration for internal engineering tools at Intuit."
+    - value: "45%"
+      label: "API latency reduction"
+      detail: "Monolith-to-microservices migration on AWS at ADP."
+    - value: "99.99%"
+      label: "Service uptime"
+      detail: "Serverless deployments on AWS Lambda and API Gateway at Intuit."
+    - value: "99.999%"
+      label: "Data consistency"
+      detail: "High-throughput Kafka event platform with disaster recovery at ADP."
+    - value: "10x"
+      label: "API speed improvement"
+      detail: "Apple Wallet APIs built with Python, FastAPI and autoscaling at Disney ABC."
+
+# ---------------------------------------------------------------------------
+# SKILLS — this section carries most of the ATS keyword weight.
+# ---------------------------------------------------------------------------
+skills:
+  heading: "Technical skills"
+  subheading: >
+    Grouped the way a hiring manager reads them. Everything listed has been used on
+    production systems.
+  groups:
+    - name: "Backend & API development"
+      primary: true
+      note: "Seven languages, all shipped in production — not a resume list."
+      items:
+        - "Node.js (Express)"
+        - "Python (FastAPI, Flask, Django)"
+        - "Java (Spring Boot)"
+        - "Go"
+        - "C# (ASP.NET Core)"
+        - "Ruby (Rails)"
+        - "PHP (Laravel)"
+        - "REST API design"
+        - "GraphQL"
+        - "Microservices"
+        - "Event-driven architecture"
+        - "Serverless (AWS Lambda)"
+        - "WebSockets"
+        - "JWT auth"
+
+    - name: "Messaging & data pipelines"
+      primary: true
+      items:
+        - "Apache Kafka"
+        - "RabbitMQ"
+        - "Apache Spark"
+        - "Databricks"
+        - "Apache Airflow"
+        - "Snowflake"
+        - "AWS Glue"
+        - "Amazon Athena"
+        - "Amazon Redshift"
+        - "Batch & stream processing"
+        - "ETL / ELT"
+        - "Schema design"
+
+    - name: "Database & caching"
+      items:
+        - "PostgreSQL"
+        - "MySQL"
+        - "SQL Server"
+        - "Oracle"
+        - "MongoDB"
+        - "DynamoDB"
+        - "Cassandra"
+        - "AuroraDB"
+        - "MariaDB"
+        - "Redis"
+        - "Query tuning"
+        - "Caching strategy"
+        - "Data modeling"
+
+    - name: "AI & GenAI integration"
+      items:
+        - "LangChain"
+        - "Llama"
+        - "RAG"
+        - "Vector databases"
+        - "Prompt engineering"
+        - "Agentic architecture"
+        - "OpenAI API"
+        - "Anthropic API"
+        - "AWS Bedrock"
+        - "AWS SageMaker"
+        - "Model Context Protocol (MCP)"
+        - "Semantic caching"
+        - "LLM evaluation"
+        - "MLOps"
+
+    - name: "Cloud & infrastructure"
+      items:
+        - "AWS"
+        - "Azure"
+        - "GCP"
+        - "AWS Lambda"
+        - "Amazon ECS"
+        - "Amazon EKS"
+        - "AWS Fargate"
+        - "EC2"
+        - "Amazon S3"
+        - "Amazon RDS"
+        - "API Gateway"
+        - "Docker"
+        - "Kubernetes"
+        - "Terraform"
+        - "CloudFormation"
+        - "Secrets Manager"
+        - "CloudWatch"
+
+    - name: "CI/CD & code quality"
+      items:
+        - "Jenkins"
+        - "GitLab CI/CD"
+        - "GitHub Actions"
+        - "Test-driven development (TDD)"
+        - "Unit & integration testing"
+        - "JUnit"
+        - "Mockito"
+        - "PHPUnit"
+        - "Selenium"
+        - "Code review"
+        - "Structured logging"
+        - "Production debugging"
+
+    - name: "Security & auth"
+      items:
+        - "OAuth2"
+        - "OpenID Connect"
+        - "SAML2"
+        - "JWT"
+        - "AWS Cognito"
+        - "Azure AD"
+        - "Secrets handling"
+        - "Encryption"
+        - "IAM least privilege"
+        - "Compliance & PHI handling"
+
+# ---------------------------------------------------------------------------
+# EXPERIENCE — reverse chronological. Outcome first, mechanism second.
+# ---------------------------------------------------------------------------
+experience:
+  heading: "Experience"
+  subheading: "15+ years across fintech, medtech, payroll, media and live entertainment."
+  roles:
+    - company: "Intuit"
+      title: "Senior Backend Engineer (Node.js/Python/AWS)"
+      period: "Oct 2024 – Present"
+      summary: >
+        Designing scalable Node.js and Python backend services, migrating REST to GraphQL, and
+        building the serverless infrastructure and CI/CD behind them.
+      bullets:
+        - "Designed scalable Node.js backend services for high-availability systems"
+        - "Migrated REST APIs to GraphQL, improving data performance by 35%"
+        - "Implemented AWS Lambda and API Gateway for serverless deployments with 99.99% uptime"
+        - "Created CI/CD pipelines using Docker and GitLab for continuous integration and delivery"
+        - "Enhanced data caching strategies with Redis for faster backend responses"
+        - "Used FastAPI and Python to develop microservices and backend logic"
+        - "Ensured compliance and security best practices across backend infrastructure"
+        - "Conducted code reviews and mentoring to ensure high coding standards"
+      stack:
+        ["Node.js", "Express.js", "Python", "FastAPI", "GraphQL", "AWS Lambda", "API Gateway",
+         "CodePipeline", "MySQL", "PostgreSQL", "MongoDB", "Docker", "Podman", "Redis",
+         "Kubernetes", "Terraform", "CloudFormation", "Jenkins", "GitLab CI/CD", "Kafka",
+         "GenAI", "LangChain"]
+
+    - company: "Medtronic"
+      title: "Senior Backend Developer (Python/Azure)"
+      period: "Jan 2021 – Sep 2024"
+      summary: >
+        Built backend systems and secure APIs for regulated patient-data platforms, cutting
+        backend performance issues with caching and database optimization.
+      bullets:
+        - "Developed backend systems with Python and FastAPI for patient data platforms"
+        - "Implemented GraphQL and REST APIs to securely handle PHI data and compliance"
+        - "Improved backend performance by 93% through caching and database optimization (Redis/PostgreSQL)"
+        - "Utilized Azure AD and AWS Cognito for secure identity management and SSO"
+        - "Built and optimized CI/CD pipelines with Kubernetes and Terraform for continuous deployment"
+        - "Created backend automation scripts and infrastructure as code using Terraform and Docker"
+        - "Led backend integration efforts with frontend teams using React/Next.js"
+        - "Conducted backend code reviews, provided mentorship, and enforced secure coding practices"
+      stack:
+        ["Python", "TypeScript", "Java", "Node.js", "FastAPI", "Django", "Spring Boot",
+         "GraphQL", "GenAI", "AWS Lambda", "Fargate", "API Gateway", "GCP Cloud Run", "GKE",
+         "BigQuery", "Azure", "Docker", "Podman", "Kubernetes", "Terraform", "CloudFormation",
+         "Jenkins", "GitLab", "Cloud Build", "PostgreSQL", "MySQL", "MongoDB", "Oracle",
+         "Redis", "Kafka", "Spark", "Snowflake"]
+
+    - company: "ADP"
+      title: "Lead Full-Stack Developer / Architect (Kafka/AWS)"
+      period: "Dec 2017 – Dec 2020"
+      summary: >
+        Designed a high-throughput Kafka data platform and led the microservices migration that
+        cut payroll API latency 45%.
+      bullets:
+        - "Designed a high-throughput financial data platform using Kafka with 99.999% data consistency and disaster recovery"
+        - "Migrated monolithic payroll applications to microservices, reducing API latency by 45% and increasing system throughput"
+        - "Implemented TypeScript standards and component-based architecture, reducing production defects by 20%+"
+        - "Developed and optimized GraphQL APIs with Aurora and DynamoDB for large-scale, performance-critical workloads"
+        - "Engineered cloud-native infrastructure on AWS EKS using Terraform, reducing operational costs by 30%"
+        - "Mentored junior and mid-level engineers and established architectural and coding best practices"
+        - "Improved system reliability using observability tooling, achieving 99.99% uptime and 60% faster incident resolution"
+      stack:
+        ["TypeScript", "Java", "Spring Boot", "React", "Node.js", "Kafka", "Spark",
+         "AWS EKS", "Lambda", "Aurora", "DynamoDB", "CloudWatch", "Secrets Manager", "Azure",
+         "GraphQL", "Oracle", "MySQL", "MongoDB", "Docker", "Kubernetes", "Terraform",
+         "CloudFormation", "Databricks", "Redis", "New Relic", "OpenID", "SAML"]
+
+    - company: "Disney ABC"
+      title: "Senior Full-Stack Developer / Architect (AWS, React, Distributed Systems)"
+      period: "Jul 2016 – Dec 2017"
+      summary: >
+        Built high-performance Apple Wallet APIs and multi-region backend services, with
+        enterprise authentication and Kafka-based event pipelines.
+      bullets:
+        - "Integrated Python services with ServiceNow for automated L2 ticketing and improved incident response workflows"
+        - "Developed high-performance Apple Wallet APIs using Python, FastAPI, and autoscaling to achieve 10x speed improvements"
+        - "Designed active-active, multi-region microservices using Node.js and Express with sub-100ms global latency"
+        - "Engineered resilient data pipelines with Kafka and Cassandra for distributed event-driven systems"
+        - "Implemented enterprise authentication using SAML2, OAuth2, and secure token lifecycle management"
+        - "Built scalable full-stack applications with Next.js, React, and TypeScript using strict compiler standards"
+        - "Automated cloud infrastructure using Terraform and CloudFormation across AWS and Azure, reducing costs and provisioning time"
+      stack:
+        ["Java", "Spring Boot", "Python", "Go", "Node.js", "React", "AWS ECS/EKS/RDS/S3",
+         "Aurora", "Cassandra", "MongoDB", "Docker", "Kubernetes", "Terraform", "CloudFormation",
+         "ELK", "New Relic", "JMeter", "Bash"]
+
+    - company: "Live Nation / Ticketmaster"
+      title: "Senior Full-Stack Developer / Architect (AWS, Python)"
+      period: "Sep 2014 – Apr 2016"
+      summary: >
+        Improved presale and on-sale system performance 10x, and standardized API error
+        handling across dockerized AWS microservices.
+      bullets:
+        - "Improved presale and on-sale system performance by 10x, reducing processing time from hours to minutes"
+        - "Optimized Java JARs with caching, timeout handling, and detailed application logging"
+        - "Designed dockerized EC2 microservices using AWS CloudFormation, ALB, S3, RDS, and centralized logging"
+        - "Standardized API error handling using proper HTTP status codes and structured JSON responses"
+        - "Built Shell and Python automation scripts to simulate and compare API behavior across environments"
+        - "Reverse engineered undocumented applications and libraries, producing clear technical documentation"
+        - "Implemented monitoring and alerting using Servlet logging, Sumo Logic, New Relic, and Amazon CloudWatch"
+        - "Automated infrastructure and deployments using Chef, Puppet, and Knife"
+      stack:
+        ["Python", "Java", "Spring Boot", "Go", "TypeScript", "React", "Angular", "Vue",
+         "JavaScript ES6+", "AWS", "CloudFormation", "EC2", "ECS", "EKS", "S3", "RDS",
+         "Oracle", "Aurora", "Docker", "Kubernetes", "Terraform", "Sumo Logic", "New Relic",
+         "CloudWatch", "Chef", "Puppet", "Bash"]
+
+    - company: "Disney Parks & Resorts"
+      title: "Web Developer"
+      period: "Jan 2010 – Apr 2016"
+      summary: >
+        Owned the Disney World and Disneyland ticketing verticals end to end, with test-driven
+        development and automated regression coverage.
+      bullets:
+        - "Owned Disney World / Disneyland ticketing verticals, building new functionality from requirements to release"
+        - "Owned the entire web-ticketing flow: login, main page, ticket validation, assignment, confirmation, and service calls"
+        - "Created new API service calls and modules processing frontend validation via AJAX / JSON"
+        - "Created JUnit/Mockito tests for each requirement and Selenium tests simulating the full application flow"
+        - "Code reviewed peers and suggested refinements to improve readability and performance"
+      stack:
+        ["Python", "Spring Boot", "JPA", "MySQL", "RDS", "Microservices", "ECS", "Docker",
+         "CloudWatch", "CloudFormation", "S3", "JavaScript", "PHP", "Java", "HTML", "CSS",
+         "TDD", "Selenium", "JUnit"]
+
+# ---------------------------------------------------------------------------
+# PROJECTS — real sites and systems, screenshotted from production.
+# ---------------------------------------------------------------------------
+projects:
+  heading: "Selected work"
+  subheading: "Backend systems and live sites I built or led — the API, the data layer, and what shipped."
+  items:
+    - title: "Stock Movers Predictor — market screener dashboard"
+      org: "Personal project · live"
+      slug: "stock-movers-predictor"
+      image: "projects/stock-predictor.jpg"
+      imageAlt: "Stock Movers Predictor dashboard in dark and light theme"
+      tagline: "Full-stack screener predicting next-day gainers and losers from market data."
+      problem: >
+        Retail traders wanted a fast way to screen for likely next-day movers using pre/post
+        market activity, momentum, and news sentiment, without scraping data by hand.
+      approach: >
+        Built a Python backend that pulls and scores market data (price, volume, relative
+        volume, momentum, sector) into a confidence-ranked prediction, served through a REST
+        API to a React data-grid frontend with live filtering, sorting, and theming.
+      outcome: >
+        A working end-to-end screener — ingestion, scoring API, and an interactive dashboard —
+        refreshing ranked gainer/loser predictions with confidence scores in real time.
+      tags: ["Python", "REST API", "React", "Data visualization", "Market data"]
+      images:
+        - src: "projects/stock-predictor-dark.jpg"
+          alt: "Stock Movers Predictor dashboard, dark Nord theme, gainers table with confidence scores"
+          caption: "Gainers view — dark theme, filterable by min price and volume, sortable columns."
+        - src: "projects/stock-predictor-light.jpg"
+          alt: "Stock Predictor dashboard, light theme, predicted move and confidence columns"
+          caption: "Light theme variant with predicted move %, confidence, and 5-day momentum."
+
+    - title: "Taheri Exchange — currency trading platform"
+      org: "Client site · live"
+      url: "https://taheriexchange.com/"
+      image: "projects/currency-exchange.jpg"
+      imageAlt: "Taheri Exchange currency conversion homepage"
+      tagline: "Real-time currency calculator and rate-quote API for a Canadian FX brokerage."
+      problem: >
+        A currency exchange brokerage needed a public site that could quote live rates, run a
+        two-way calculator, and convert visitors into "get a quote" and order requests.
+      approach: >
+        Built a backend rate-feed API serving live conversion rates to a two-way calculator,
+        with the order and quote-request flows and the trust-building content around them.
+      outcome: >
+        A production FX site serving live conversion rates and lead capture for a business with
+        36+ years in currency exchange.
+      tags: ["REST API", "Real-time rates", "Node.js", "Lead capture"]
+
+    - title: "Medtronic clinical analytics dashboard"
+      org: "Medtronic"
+      tagline: "Backend APIs and data layer for a physician-facing diabetes care dashboard."
+      problem: >
+        Clinicians needed to search patient status, review biometric trends, and get
+        recommendations from a slow legacy admin tool that took nearly a minute to load.
+      approach: >
+        Built Python/FastAPI backend services over Oracle, MySQL and GraphQL, secured with
+        SAML2/Cognito/SiteMinder, and cut load time with Redis caching and query optimization.
+      outcome: >
+        Backend performance improved 93% through caching and database optimization, dropping
+        page load time in a regulated healthcare workflow.
+      tags: ["Python", "FastAPI", "Redis", "GraphQL", "Healthcare", "PHI compliance"]
+
+    - title: "Live Nation / Ticketmaster — presale, e-tickets & Apple Wallet"
+      org: "Live Nation / Ticketmaster"
+      tagline: "High-throughput ticketing backend and mobile e-ticket flow for millions of fans."
+      problem: >
+        Presale and on-sale processing took hours under peak demand, and physical tickets
+        needed a fast backend path into Apple Wallet for mobile venue entry.
+      approach: >
+        Built dockerized, auto-scaling AWS microservices for seat reservation and e-ticket
+        generation, with the Apple Wallet pass-generation APIs behind them in Python and Java.
+      outcome: >
+        10x throughput — hours reduced to minutes — and an Apple Wallet ticketing backend still
+        used by millions of fans today.
+      tags: ["Python", "Java", "AWS", "Apple Wallet", "Autoscaling", "Microservices"]
+
+    - title: "Disney Parks & Resorts — ticketing, MagicBand & guest profile"
+      org: "Disney Parks & Resorts"
+      tagline: "End-to-end park-goer backend: login, will-call tickets, MagicBand assignment."
+      problem: >
+        Park guests needed one reliable flow to log in, purchase will-call tickets, and assign
+        MagicBands to family members, with backend validation that couldn't fail at the gate.
+      approach: >
+        Built the ticket and profile services in Java/Spring Boot and Python, with JUnit and
+        Selenium test suites covering login through confirmation on every release.
+      outcome: >
+        A ticketing and MagicBand assignment backend that shipped reliably across Disney World
+        and Disneyland, with automated tests guarding every release.
+      tags: ["Java", "Spring Boot", "Python", "PHP", "MySQL", "Selenium"]
+
+    - title: "Intuit — Credit Karma AI risk estimator integration"
+      org: "Intuit"
+      tagline: "GraphQL and GenAI-enabled backend capabilities for internal engineering tools."
+      problem: >
+        Engineering teams needed real-time visibility into REST endpoint events and risk
+        signals without switching context, and REST APIs were becoming a bottleneck for the
+        frontends consuming them.
+      approach: >
+        Converted REST endpoints to GraphQL for faster, more flexible data-fetching, and
+        integrated GenAI-driven Slack notifications for endpoint events, backed by Lambda and
+        API Gateway services with strict security review.
+      outcome: >
+        REST-to-GraphQL migration shipped with a 35% data performance improvement, plus a
+        secure internal Slack integration adopted by the engineering team.
+      tags: ["GraphQL", "Node.js", "Python", "AWS Lambda", "GenAI"]
+
+    - title: "Dr. K Plastic Surgery — practice marketing site"
+      org: "Client site · live"
+      url: "https://www.drkplasticsurgery.com/"
+      image: "projects/drk-plastic-surgery.jpg"
+      imageAlt: "Dr. K Plastic Surgery homepage hero section"
+      tagline: "Editorial marketing site for a Beverly Hills plastic surgery practice."
+      problem: >
+        A high-end surgical practice needed a site that read as premium and trustworthy, with
+        procedure content organized for both patients and search engines.
+      approach: >
+        Built a content-driven, image-forward site with clean typography and a fast, mobile-
+        friendly layout, structured around consultation calls-to-action.
+      outcome: >
+        A polished, production marketing site driving consultation requests for a Beverly
+        Hills practice.
+      tags: ["PHP", "Responsive design", "SEO", "Performance"]
+
+    - title: "Little Italy Pizza — restaurant ordering site"
+      org: "Client site · live"
+      url: "https://www.littleitalypizzany.com/"
+      image: "projects/little-italy-pizza.jpg"
+      imageAlt: "Little Italy Pizza homepage with order and menu navigation"
+      tagline: "Ordering, catering, and pickup/delivery site for a Midtown Manhattan pizzeria."
+      problem: >
+        A New York pizzeria needed one site to route customers into ordering, catering
+        inquiries, and app downloads, without confusing the primary "order now" action.
+      approach: >
+        Built a conversion-focused layout with a hero-level order CTA, a persistent utility bar
+        for pickup/delivery, calling, and directions, and a menu/catering content structure.
+      outcome: >
+        A live ordering hub consolidating online orders, catering leads, and app installs into
+        one page.
+      tags: ["PHP", "Responsive design", "Conversion design"]
+
+    - title: "Dwellco Homes — custom home builder site"
+      org: "Client site · live"
+      url: "https://dwellcohomes.com/"
+      image: "projects/dwellco-homes.jpg"
+      imageAlt: "Dwellco Homes homepage with design, build, renovate and manage services"
+      tagline: "Portfolio and lead-generation site for a custom home design/build company."
+      problem: >
+        A design-build firm needed to showcase project photography and route four distinct
+        service lines (design, build, renovate, manage) into one coherent site.
+      approach: >
+        Built a photography-led homepage with a clear four-service navigation structure and a
+        projects/gallery section for past work, tied to a contact and market page.
+      outcome: >
+        A live portfolio site presenting the full design-build-renovate-manage service line to
+        prospective homeowners.
+      tags: ["PHP", "Responsive design", "Portfolio/gallery"]
+
+# ---------------------------------------------------------------------------
+# RECOMMENDATIONS — verbatim quotes from LinkedIn.
+# ---------------------------------------------------------------------------
+recommendations:
+  heading: "What colleagues say"
+  subheading: >
+    Fifteen recommendations from managers, peers and clients across Intuit, Disney, ADP,
+    Ticketmaster and Ganz — several speaking directly to code quality and design.
+  footnote: "All recommendations are reproduced verbatim."
+  items:
+    - name: "Bash Kadri"
+      title: "Senior Software Engineer (Python, Gen AI, APIs)"
+      relationship: "Worked with Anosh on the same team at Intuit · July 2025"
+      featured: true
+      quote: "I had the pleasure of starting at Intuit alongside Anosh, and we were both assigned to the same initial project. Throughout this time, Anosh demonstrated strong technical expertise and was always willing to share his knowledge, especially when it came to AWS, coding and deployment questions. He was consistently approachable and helpful, no matter how busy he was. Anosh's collaborative spirit and technical proficiency make him a valuable asset to any team, and I highly recommend him."
+
+    - name: "Eddie Rodriguez"
+      title: "Manager, Software Engineering — Disney Streaming/Hulu"
+      relationship: "Worked with Anosh at Disney ABC · July 2025"
+      featured: true
+      quote: "I had the pleasure of working with Anosh at Disney ABC, where he consistently impressed me with his breath of knowledge and his work ethic. Anosh is a team player, always ready to lend a hand and support colleagues. He picks up new concepts incredibly fast and consistently delivered high-quality code and solutions to interesting problems. Any team would be lucky to have Anosh."
+
+    - name: "Justin Pham"
+      title: "Senior Manager, Decision Rules PMCS — RBC"
+      relationship: "Worked with Anosh on the same team at Ganz · November 2011"
+      quote: "I had worked with Anosh as senior software developer on many projects at Ganz. He demonstrated excellent software design and coding skills, an eargeness to quickly learn and apply new methologies, frameworks and progamming languages. Anosh is an invaluable team player who is very knowledgable, creative and supportive. I would love working with Anosh again."
+
+    - name: "Shiyin He"
+      title: "Software Engineer"
+      relationship: "Anosh was senior to Shiyin · July 2025"
+      quote: "During our time together, Anosh served as a technical lead on our Billing and Payment Modernization initiative — one of the most critical internal system overhauls in recent years. Anosh consistently demonstrated exceptional technical acumen and leadership. He was instrumental in designing and developing robust Java backend systems using Spring RESTful APIs, Hibernate, Oracle, and Kafka. His ability to architect solutions based on Spring MVC principles and leverage Spring IoC for managing dependencies was pivotal in establishing a clean, scalable, and maintainable codebase. Beyond his technical contributions, Anosh led by example — conducting requirements analysis, overseeing code and test walkthroughs, and collaborating across teams with clarity and purpose. His deep involvement throughout the software development lifecycle, from requirement gathering through development and deployment, ensured that the project met both its technical and business goals. What stood out most was Anosh's ability to translate complex technical challenges into structured, thoughtful solutions, all while supporting and mentoring team members. He has a rare balance of hands-on engineering skills and leadership maturity, making him a key asset in any high-performing team. I highly recommend Anosh for any role that requires strong technical leadership, reliability, and collaborative spirit."
+
+    - name: "Peter Halferty"
+      title: "Senior Portal Developer — York University"
+      relationship: "Worked with Anosh on the same team · May 2012"
+      quote: "Anosh is a talented developer with an excellent focus on detail and ensuring the problem is properly understood."
+
+    - name: "Grant Cahill"
+      title: "Director of Product — Activision"
+      relationship: "Worked with Anosh on the same team · October 2018"
+      quote: "Anosh is a talented engineer who is always willing to put in the extra effort to make things happen. When challenging problems arise, Anosh is able to look at that problem and come up with a creative solution when it appears there is no solution available. In fact, I can recall specific instances when I needed Anosh to develop and execute a unique solution to onboard users to our application that had never been done before at Disney and Anosh provided a solution that was immediately put into service. Additionally, Anosh is able to adapt to the needs of the team and provide support and direction as needed. It is this flexibility and ability to adapt that makes Anosh an extremely valuable developer on any team. Building on this flexibility, due to Anosh's calm and inviting demeanor, I could always rely on Anosh to help onboard new developers and trust that they would get up to speed quickly. I highly recommend Anosh for future technical leadership roles and look forward to crossing paths with him again in the future."
+
+    - name: "Adrian Aguirre"
+      title: "Lead Software Engineer"
+      relationship: "Worked with Anosh on the same team at Disney · July 2025"
+      quote: "I had the opportunity to work closely with Anosh on several key projects at Disney, where he served as the main technical lead. Anosh was actively involved in our daily scrums and played a pivotal role in leading the software development efforts, some of which he seamlessly handed off to me for further implementation. He consistently demonstrated strong technical expertise and was a pleasure to work with. Anosh regularly proposed meaningful improvements and collaborated effectively with QA, DevOps, and the architecture teams to ensure smooth project delivery. He's a quick learner, a true team player, and someone who brings a collaborative spirit to every project. I highly recommend Anosh for any role that requires technical leadership and cross-functional teamwork."
+
+    - name: "Colin Gray"
+      title: "Director, AI & Foundations Engineering — Disney Ad Platforms"
+      relationship: "Managed Anosh directly at Disney ABC · June 2025"
+      quote: "I had the opportunity to manage Anosh during our time at Disney ABC, where he was a strong contributor to several key projects. He consistently brought a thoughtful, solutions-oriented approach and played an important role on the team. Anosh is a capable full-stack engineer with a solid technical foundation and a collaborative mindset. I appreciated his work ethic and would be happy to work with him again in the future."
+
+    - name: "Deepika Moudgil"
+      title: "Business Analyst · Certified AWS Cloud Practitioner · CSM"
+      relationship: "Worked with Anosh on the same team at Ganz · November 2012"
+      quote: "Anosh was one of the most dedicated professionals through his work at Ganz. Anosh was fantastic to work with. He is an efficient, ambitious and careful strategist. He is an experienced, detail oriented employee with lots of knowledge in his field."
+
+    - name: "Bogdan Zinko"
+      title: "Senior eLearning Developer — GP Canada Co."
+      relationship: "Worked with Anosh at Ganz · November 2012"
+      quote: "Anosh was one of the most dedicated developers while at Ganz. Working with him was great, he is an efficient, well informed, experienced developer."
+
+    - name: "M. Ryan Khosravi"
+      title: "President"
+      relationship: "Was Anosh's client · May 2012"
+      quote: "Anosh performed an extra ordinary project for me in a limited time. He was very approachable to reach, for any question or ongoing updates. He was extremly patient to describe technical aspects of project. I found him very knowledgable and he always had creative ideas that made the result go beyond my expectation. I am very happy to know him and highly recommend him without any reservation."
+
+    - name: "Renee Webster"
+      title: "Creative Thinker, Multi-Tasker & Problem Solver"
+      relationship: "Managed Anosh directly · November 2011"
+      quote: "Anosh has the ability to adapt well to the ever changing technical environment, shifting priorities and constantly evolving requirements. He is conscientious and has the ability to work as part of a team and is willing and able to support his peers. This all makes him an essential and an important ingredient to any project team. Anosh seeks out responsibility and follows through with tasks to completion. I would work with Anosh again in a heartbeat."
+
+    - name: "Ed Presz"
+      title: "Enterprise Data Executive"
+      relationship: "Worked with Anosh at Ticketmaster · June 2016"
+      quote: "I collaborated with Anosh at Ticketmaster on several projects, and he's an effective Senior Software Engineer with a strong background in database design and performance skills."
+
+    - name: "Yasmine Khalil"
+      title: "Strategic Client Development, Product & Business Operations"
+      relationship: "Was senior to Anosh at Ticketmaster · July 2016"
+      quote: "Dependable, efficient & smart. Three important characteristics I would use to define Anosh & his contribution to Ticketmaster. Whenever there was a project that needed his team's attention, he was on it. Much appreciate when time is of the essence and we want fan's mobile experience to be A+. It was a pleasure working with Anosh."
+
+    - name: "Simon Grantham"
+      title: "Engineering Manager (retired)"
+      relationship: "Managed Anosh directly · October 2012"
+      quote: "Anosh is a skilled developer. He is always committed and works very hard to produce a good product. I recommend him."
+
+
+# ---------------------------------------------------------------------------
+# CREDENTIALS
+# ---------------------------------------------------------------------------
+credentials:
+  heading: "Credentials"
+  subheading: ""
+  education:
+    - degree: "Bachelor's Degree, Software Engineering"
+      school: "Lakehead University"
+      year: ""
+    - degree: "Associate's Degree, Computer Engineering"
+      school: "Seneca College"
+      year: ""
+  certifications:
+    - name: "Multi-language backend development"
+      issuer: "Node.js, Python, Java, Go, C#, Ruby, PHP — REST & GraphQL"
+    - name: "Messaging & data pipelines"
+      issuer: "Kafka, RabbitMQ, Spark, Airflow, Snowflake, Databricks"
+    - name: "GenAI application integration"
+      issuer: "LangChain, RAG, vector databases, prompt engineering, OpenAI & Anthropic APIs"
+    - name: "Cloud & CI/CD"
+      issuer: "AWS, Azure, GCP, Docker, Kubernetes, Terraform, Jenkins, GitHub Actions"
+
+# ---------------------------------------------------------------------------
+# CONTACT PAGE
+# ---------------------------------------------------------------------------
+contactPage:
+  heading: "Contact me"
+  intro: "Use the form below to send a message directly, or reach out directly."
+  privacyNote: "Your message goes straight to my inbox. No newsletter, no list, no forwarding."
+
+# ---------------------------------------------------------------------------
+# CLOSING CTA
+# ---------------------------------------------------------------------------
+closing:
+  heading: "Hiring a Backend / Software Developer?"
+  body: >
+    15+ years shipping production APIs in Node.js, Python, Java, Go, C#, Ruby and PHP, plus the
+    cloud infrastructure and CI/CD behind them. Tell me about the role and I'll tell you if I'm
+    the right person for it.
+  ctaLabel: "Contact me"
