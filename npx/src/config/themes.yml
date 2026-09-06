@@ -1,0 +1,174 @@
+# ============================================================================
+#  THEMES  —  5 selectable light palettes
+# ============================================================================
+#  Every colour on the site comes from these tokens. To restyle the whole site,
+#  change hex values here — nothing else. To add a 6th theme, copy any block,
+#  give it a new `id`, and it appears in the theme switcher automatically.
+#
+#  Which theme the site uses is set by `defaultTheme` below.
+#
+#  `showThemeSwitcher` is currently FALSE, so the site is locked to
+#  `defaultTheme`, the switcher is hidden from the header, and every visitor
+#  sees the same palette. Set it to true to let visitors choose; their choice is
+#  then remembered in their own browser (localStorage) and never leaves it.
+#
+#  TOKEN REFERENCE
+#    bg              page background
+#    bgAlt           alternating section background
+#    surface         cards, panels
+#    surfaceHover    card hover state
+#    text            primary body + heading text
+#    textMuted       secondary text, descriptions
+#    textSubtle      captions, labels, metadata
+#    border          hairline dividers, card outlines
+#    borderStrong    emphasised outlines
+#    accent          primary colour — buttons, links, highlights
+#    accentHover     accent on hover/active
+#    accentContrast  text colour that sits ON the accent (must pass AA)
+#    accentSoft      pale accent wash — chips, badges, callouts
+#    accentSoftText  text colour that sits ON accentSoft (must pass AA)
+#    success         availability badge, form success state
+#    heroGlow        large soft radial glow behind the hero
+#    shadow          rgba shadow colour for elevation
+#    isDark          true = browser paints scrollbars/form controls dark
+#
+#  All five palettes below are contrast-checked: body text ≥ 7:1 against its
+#  background, muted text ≥ 4.5:1, and every accent/contrast pair ≥ 4.5:1.
+# ============================================================================
+
+defaultTheme: soft-gray
+
+# Show the theme switcher in the header. Set to false to lock the site to
+# `defaultTheme` and hide the control entirely.
+showThemeSwitcher: false
+
+themes:
+  # --------------------------------------------------------------------------
+  # 1. CLEAN WHITE — crisp, minimal, modern. Broadest professional appeal.
+  # --------------------------------------------------------------------------
+  - id: clean-white
+    name: Clean White
+    hint: Crisp & minimal
+    isDark: false
+    colors:
+      bg: "#ffffff"
+      bgAlt: "#fafafa"
+      surface: "#ffffff"
+      surfaceHover: "#f5f5f5"
+      text: "#111214"
+      textMuted: "#4a4d52"
+      textSubtle: "#6c7077"
+      border: "#e6e7e9"
+      borderStrong: "#c8cacd"
+      accent: "#1a56db"
+      accentHover: "#1443b0"
+      accentContrast: "#ffffff"
+      accentSoft: "#e8effd"
+      accentSoftText: "#143a96"
+      success: "#0f7a4f"
+      heroGlow: "rgba(26, 86, 219, 0.09)"
+      shadow: "rgba(17, 18, 20, 0.08)"
+
+  # --------------------------------------------------------------------------
+  # 2. SOFT GRAY — light-grey page, white cards. Depth without busy-ness.
+  # --------------------------------------------------------------------------
+  - id: soft-gray
+    name: Soft Gray
+    hint: Sophisticated & clean
+    isDark: false
+    colors:
+      bg: "#f5f6f8"
+      bgAlt: "#eceef2"
+      surface: "#ffffff"
+      surfaceHover: "#f7f8fa"
+      text: "#1b1f24"
+      textMuted: "#4c555f"
+      textSubtle: "#6b7480"
+      border: "#e1e4e9"
+      borderStrong: "#c3c9d2"
+      accent: "#2c4a6e"
+      accentHover: "#1f3852"
+      accentContrast: "#ffffff"
+      accentSoft: "#e6ebf2"
+      accentSoftText: "#24405f"
+      success: "#14663f"
+      heroGlow: "rgba(44, 74, 110, 0.10)"
+      shadow: "rgba(27, 31, 36, 0.09)"
+
+  # --------------------------------------------------------------------------
+  # 3. WARM CREAM — elegant and warm; less sterile than pure white.
+  # --------------------------------------------------------------------------
+  - id: warm-cream
+    name: Warm Cream
+    hint: Warm & refined
+    isDark: false
+    colors:
+      bg: "#faf8f3"
+      bgAlt: "#f7f3ea"
+      surface: "#ffffff"
+      surfaceHover: "#fbf8f2"
+      text: "#23201a"
+      textMuted: "#5a5348"
+      textSubtle: "#7b7264"
+      border: "#e9e2d5"
+      borderStrong: "#cfc4ae"
+      accent: "#8a6a2f"
+      accentHover: "#6e5424"
+      accentContrast: "#ffffff"
+      accentSoft: "#f5ebd8"
+      accentSoftText: "#6e5424"
+      success: "#2e6b45"
+      heroGlow: "rgba(138, 106, 47, 0.11)"
+      shadow: "rgba(35, 32, 26, 0.09)"
+
+  # --------------------------------------------------------------------------
+  # 4. SOFT BLUE — bright, calm, trustworthy. Reads well in tech and finance.
+  # --------------------------------------------------------------------------
+  - id: soft-blue
+    name: Soft Blue
+    hint: Fresh & trustworthy
+    isDark: false
+    colors:
+      bg: "#f3f8fc"
+      bgAlt: "#eaf4fa"
+      surface: "#ffffff"
+      surfaceHover: "#f2f8fc"
+      text: "#0e2337"
+      textMuted: "#3e5872"
+      textSubtle: "#5f778e"
+      border: "#dce8f2"
+      borderStrong: "#b7cce0"
+      accent: "#10508c"
+      accentHover: "#0b3e6e"
+      accentContrast: "#ffffff"
+      accentSoft: "#e1effa"
+      accentSoftText: "#0b3e6e"
+      success: "#0f7048"
+      heroGlow: "rgba(16, 80, 140, 0.11)"
+      shadow: "rgba(14, 35, 55, 0.09)"
+
+  # --------------------------------------------------------------------------
+  # 5. LIGHT BEIGE — warm, premium, editorial. More beige than Warm Cream.
+  # --------------------------------------------------------------------------
+  - id: light-beige
+    name: Light Beige
+    hint: Premium & editorial
+    isDark: false
+    colors:
+      bg: "#f3efe7"
+      bgAlt: "#ede7dc"
+      surface: "#ffffff"
+      surfaceHover: "#faf7f1"
+      text: "#23201b"
+      textMuted: "#575044"
+      textSubtle: "#786f60"
+      border: "#e2dacb"
+      borderStrong: "#c6b9a2"
+      accent: "#7a5c2e"
+      accentHover: "#5f4722"
+      accentContrast: "#ffffff"
+      accentSoft: "#efe4cf"
+      accentSoftText: "#5f4722"
+      success: "#2e6b45"
+      heroGlow: "rgba(122, 92, 46, 0.11)"
+      shadow: "rgba(35, 32, 27, 0.10)"

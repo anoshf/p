@@ -59,8 +59,6 @@ contact:
     blurb: "Tell me the role and I'll reply the same day. I read every message myself."
     submitLabel: "Send message"
     successMessage: "Message sent. I'll get back to you within one business day."
-    roleFieldLabel: "Role you're hiring for"
-    roleFieldPlaceholder: "e.g. Senior AI Python Developer, remote"
 
   sms:
     # E.164 format. This number is NEVER rendered into the page: not as text

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Add your deployed URL here once you know it, e.g.
+# Sitemap: https://yourname.github.io/your-repo/sitemap.xml

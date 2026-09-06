@@ -301,7 +301,7 @@ own — the workflow at the repository root builds all five and publishes them t
 YOUR-USERNAME.github.io/
 ├── .github/workflows/deploy.yml   ← builds all five, publishes once
 ├── anj/      AI Cloud & Software Architect  →  /anj/
-├── dts/      AI Platform Engineer           →  /dts/
+├── ptd/      AI Platform Engineer           →  /ptd/
 ├── pyj/      AI Python Developer            →  /pyj/
 ├── dcr/      AI Data Engineer               →  /dcr/
 ├── wnx/      Full-Stack Web Developer       →  /wnx/

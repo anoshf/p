@@ -1,0 +1,333 @@
+/* ==========================================================================
+   CONTACT PAGE — layout, form controls, direct-contact panel
+   ========================================================================== */
+
+.contact-page {
+  padding-top: clamp(2.2rem, 5vw, 4rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.contact-page__head {
+  max-width: 62ch;
+  margin-bottom: var(--sp-5);
+}
+
+.contact-page__title {
+  font-size: var(--fs-3xl);
+  letter-spacing: -0.032em;
+  margin-bottom: var(--sp-3);
+}
+
+.contact-page__intro {
+  font-size: var(--fs-lg);
+  color: var(--c-text-muted);
+  line-height: 1.62;
+}
+
+.contact-page__promise {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--sp-4);
+  padding: 0.34rem 0.85rem 0.34rem 0.7rem;
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  border-radius: var(--radius-pill);
+  background: var(--c-accent-soft);
+  color: var(--c-accent-soft-text);
+}
+
+.contact-page__promise-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-success);
+  flex: none;
+}
+
+/* What to expect ----------------------------------------------------------- */
+.expect {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 0.7rem 1.6rem;
+  margin: 0 0 var(--sp-6);
+  padding: var(--sp-4) 0;
+  border-block: 1px solid var(--c-border);
+}
+
+.expect__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.55;
+}
+
+.expect__icon {
+  width: 17px;
+  height: 17px;
+  color: var(--c-success);
+  flex: none;
+  margin-top: 0.18em;
+}
+
+/* Grid --------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+.contact-card {
+  padding: clamp(1.3rem, 3vw, 2.1rem);
+}
+
+.contact-card__title {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.022em;
+  margin-bottom: 0.45rem;
+}
+
+.contact-card__blurb {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--sp-5);
+}
+
+.contact-card--direct {
+  background: var(--c-bg-alt);
+}
+
+.contact-empty {
+  max-width: 60ch;
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+}
+
+.contact-empty code,
+.form-notice code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  padding: 0.1em 0.36em;
+  border-radius: 5px;
+  background: var(--c-accent-soft);
+  color: var(--c-accent-soft-text);
+}
+
+/* Form --------------------------------------------------------------------- */
+.form {
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.form__row {
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.field label {
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  color: var(--c-text-muted);
+  letter-spacing: 0.01em;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.72rem 0.85rem;
+  font-size: var(--fs-sm);
+  font-family: inherit;
+  color: var(--c-text);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease);
+  /* 16px on iOS prevents the automatic zoom-on-focus. */
+  font-size: max(16px, var(--fs-sm));
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--c-text-subtle);
+  opacity: 0.8;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--c-border-strong);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-accent) 18%, transparent);
+}
+
+@supports not (box-shadow: 0 0 0 3px color-mix(in srgb, red 18%, transparent)) {
+  .field input:focus,
+  .field textarea:focus {
+    box-shadow: 0 0 0 3px var(--c-accent-soft);
+  }
+}
+
+/* `:user-invalid` only matches after the visitor has actually interacted with
+   the field. Plain `:invalid` would paint every empty required input red the
+   moment the page loads, which reads as "you did something wrong" before
+   anyone has typed a character. */
+.field input:user-invalid,
+.field textarea:user-invalid {
+  border-color: color-mix(in srgb, #d33 60%, var(--c-border));
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form__note {
+  font-size: var(--fs-xs);
+  color: var(--c-text-subtle);
+  line-height: 1.55;
+  text-align: center;
+}
+
+.form-notice {
+  padding: 0.8rem 1rem;
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  color: var(--c-text-muted);
+  background: var(--c-accent-soft);
+  border-radius: var(--radius-sm);
+}
+
+.form-error {
+  padding: 0.75rem 0.95rem;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: #a11;
+  background: color-mix(in srgb, #d33 10%, var(--c-bg));
+  border: 1px solid color-mix(in srgb, #d33 30%, var(--c-border));
+  border-radius: var(--radius-sm);
+}
+
+.form-success {
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-6) var(--sp-4);
+  text-align: center;
+}
+
+.form-success__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c-success) 14%, transparent);
+  color: var(--c-success);
+}
+
+@supports not (background: color-mix(in srgb, red 14%, transparent)) {
+  .form-success__icon {
+    background: var(--c-accent-soft);
+    color: var(--c-accent-soft-text);
+  }
+}
+
+.form-success__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.form-success__title {
+  font-size: var(--fs-lg);
+  max-width: 34ch;
+}
+
+/* Direct contact ----------------------------------------------------------- */
+.direct {
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.direct__heading {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.022em;
+}
+
+.direct__blurb {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.62;
+}
+
+.direct__actions {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.direct__btn {
+  width: 100%;
+}
+
+.direct__number {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.direct__hint {
+  font-size: var(--fs-xs);
+  color: var(--c-text-subtle);
+  line-height: 1.55;
+  text-align: center;
+}
+
+.direct__sched {
+  display: grid;
+  gap: 0.7rem;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-border);
+}
+
+/* Breakpoints -------------------------------------------------------------- */
+@media (min-width: 620px) {
+  .form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .direct__actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  .contact-grid--split {
+    grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+    gap: var(--sp-5);
+  }
+  .contact-grid--split .direct__actions {
+    grid-template-columns: 1fr;
+  }
+}

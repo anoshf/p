@@ -6,7 +6,7 @@ import { site, content, get, clean } from '../lib/config'
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-const TITLE = 'sjkqpy'
+const TITLE = 'spx'
 
 export default function ContactForm() {
   const cfg = get(site, 'contact.form', {}) || {}
@@ -26,7 +26,6 @@ export default function ContactForm() {
 
     const company = data.get('company') || ''
     const phone = data.get('phone') || ''
-    const role = data.get('role') || ''
     const replyTo = data.get('reply_to') || ''
 
     let senderIp = ''
@@ -41,7 +40,6 @@ export default function ContactForm() {
     const details = [
       company && `Company: ${company}`,
       phone && `Phone: ${phone}`,
-      role && `Role: ${role}`,
       replyTo && `Email: ${replyTo}`,
       senderIp && `IP: ${senderIp}`,
     ]
@@ -119,16 +117,6 @@ export default function ContactForm() {
           <label htmlFor="cf-phone">Your phone (optional)</label>
           <input id="cf-phone" name="phone" type="tel" autoComplete="tel" />
         </div>
-      </div>
-
-      <div className="field">
-        <label htmlFor="cf-role">{clean(cfg.roleFieldLabel, "Role you're hiring for")}</label>
-        <input
-          id="cf-role"
-          name="role"
-          type="text"
-          placeholder={clean(cfg.roleFieldPlaceholder, '')}
-        />
       </div>
 
       <div className="field">

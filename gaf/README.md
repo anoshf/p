@@ -1,6 +1,6 @@
-# Anosh Fallah — AI Platform Engineer
+# Anosh Fallah — AI Python Developer
 
-A single-page React site targeted at **AI Platform Engineer** roles. No backend, no database, no
+A single-page React site targeted at **AI Python Developer** roles. No backend, no database, no
 build-time secrets. Every word, colour and setting lives in three YAML files, so updating the
 site never means touching React code.
 
@@ -47,7 +47,7 @@ That's the whole toolchain. There is nothing else to install or configure.
 ## 2. What's in here
 
 ```
-anosh-ai-platform-engineer/
+anosh-ai-python-developer/
 ├── src/
 │   ├── config/
 │   │   ├── content.yml     ← ALL the words on the site
@@ -301,7 +301,7 @@ own — the workflow at the repository root builds all five and publishes them t
 YOUR-USERNAME.github.io/
 ├── .github/workflows/deploy.yml   ← builds all five, publishes once
 ├── anj/      AI Cloud & Software Architect  →  /anj/
-├── dts/      AI Platform Engineer           →  /dts/
+├── ptd/      AI Platform Engineer           →  /ptd/
 ├── pyj/      AI Python Developer            →  /pyj/
 ├── dcr/      AI Data Engineer               →  /dcr/
 ├── wnx/      Full-Stack Web Developer       →  /wnx/
@@ -312,14 +312,14 @@ To publish a change you made in this folder:
 
 ```bash
 git add .
-git commit -m "Update dts content"
+git commit -m "Update pyj content"
 git push
 ```
 
 The workflow rebuilds all five sites and republishes. This site lands at:
 
 ```
-https://YOUR-USERNAME.github.io/dts/
+https://YOUR-USERNAME.github.io/pyj/
 ```
 
 Full deployment instructions, including first-time setup, are in the **README at the repository
@@ -332,7 +332,7 @@ Set the URL in `src/config/site.yml` so link previews and canonical tags work:
 
 ```yaml
 seo:
-  siteUrl: "https://YOUR-USERNAME.github.io/dts"
+  siteUrl: "https://YOUR-USERNAME.github.io/pyj"
 ```
 
 

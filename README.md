@@ -1,17 +1,19 @@
 # Anosh Fallah — role-targeted portfolio sites
 
-Six separate portfolio sites in one repository, each tailored to a different job title, all
+Eight separate portfolio sites in one repository, each tailored to a different job title, all
 published together by a single GitHub Actions workflow.
 
 | Folder | Role | Published at |
 |---|---|---|
-| `anj/` | AI Cloud & Software Architect | `https://anoshf.github.io/anj/` |
-| `dts/` | AI Platform Engineer | `https://anoshf.github.io/dts/` |
-| `pyj/` | AI Python Developer | `https://anoshf.github.io/pyj/` |
-| `dcr/` | AI Data Engineer | `https://anoshf.github.io/dcr/` |
-| `wnx/` | Full-Stack Web Developer | `https://anoshf.github.io/wnx/` |
-| `spx/` | Backend & Software Developer | `https://anoshf.github.io/spx/` |
-| `root/` | Neutral landing card | `https://anoshf.github.io/` |
+| `anj/` | AI Cloud & Software Architect | `https://anoshf.github.io/p/anj/` |
+| `ptd/` | AI Platform Engineer | `https://anoshf.github.io/p/ptd/` |
+| `pyj/` | AI Python Developer | `https://anoshf.github.io/p/pyj/` |
+| `dcr/` | AI Data Engineer | `https://anoshf.github.io/p/dcr/` |
+| `wnx/` | Full-Stack Web Developer | `https://anoshf.github.io/p/wnx/` |
+| `spx/` | Backend & Software Developer | `https://anoshf.github.io/p/spx/` |
+| `gaf/` | Go (GoLang) & Backend Developer | `https://anoshf.github.io/p/gaf/` |
+| `npx/` | Node.js & Backend Developer | `https://anoshf.github.io/p/npx/` |
+| `root/` | Neutral landing card | `https://anoshf.github.io/p/` |
 
 `anoshf` is the GitHub username these URLs are built for.
 
@@ -20,11 +22,13 @@ about the others. **Keep a note of which is which** — nothing in the URL will 
 
 ```
 anj  →  Architect
-dts  →  Platform
+ptd  →  Platform
 pyj  →  Software / Python
 dcr  →  Data
 wnx  →  Web
 spx  →  Backend/Software
+gaf  →  Go (GoLang)
+npx  →  Node.js
 ```
 
 ---
@@ -49,7 +53,7 @@ Unzip, rename the unzipped folder to `anoshf.github.io`, open a terminal inside 
 ```bash
 git init
 git add .
-git commit -m "Add six role-targeted portfolio sites"
+git commit -m "Add eight role-targeted portfolio sites"
 git branch -M main
 git remote add origin https://github.com/anoshf/anoshf.github.io.git
 git push -u origin main
@@ -65,11 +69,11 @@ apps that have to be built, and the branch option would publish the unbuilt sour
 ### 4. Wait for the first build
 
 Open the **Actions** tab. The "Build and deploy role sites" run takes roughly two to three
-minutes: it installs and builds all six sites, assembles them into one folder, and publishes.
+minutes: it installs and builds all eight sites, assembles them into one folder, and publishes.
 
-When it's green, all six URLs above are live.
+When it's green, all eight URLs above are live.
 
-From then on, **every push to `main` rebuilds and republishes all six automatically.**
+From then on, **every push to `main` rebuilds and republishes all eight automatically.**
 
 ---
 
@@ -78,7 +82,7 @@ From then on, **every push to `main` rebuilds and republishes all six automatica
 `.github/workflows/deploy.yml`, in one job:
 
 ```
-for each of anj, dts, pyj, dcr, wnx, spx:
+for each of anj, ptd, pyj, dcr, wnx, spx, gaf, npx:
     npm ci        (install from the committed lockfile)
     npm run build (Vite → <folder>/dist)
     verify dist/index.html exists, else fail the run
@@ -105,10 +109,10 @@ listed under "Renaming a folder" below, and push.
 ## Repository layout
 
 ```
-anoshf.github.io/
+anoshf.github.io/p/
 │
 ├── .github/workflows/
-│   └── deploy.yml          builds all six, publishes once
+│   └── deploy.yml          builds all eight, publishes once
 │
 ├── root/                   the landing page at the domain root
 │   ├── index.html          plain HTML — no build step
@@ -120,19 +124,21 @@ anoshf.github.io/
 │   │   ├── content.yml         all the words
 │   │   ├── themes.yml          the 5 colour palettes
 │   │   └── site.yml            contact, SEO, navigation
-│   ├── src/                React app (identical across all six)
+│   ├── src/                React app (identical across all eight)
 │   ├── public/             headshot, favicon, robots.txt
 │   ├── package.json
 │   ├── package-lock.json   committed — npm ci needs it
 │   └── README.md           full guide for this site
 │
-├── dts/                    AI Platform Engineer          (same structure)
+├── ptd/                    AI Platform Engineer          (same structure)
 ├── pyj/                    AI Python Developer            (same structure)
 ├── dcr/                    AI Data Engineer               (same structure)
 ├── wnx/                    Full-Stack Web Developer       (same structure, plus public/projects/
 │                             screenshots for the Work section — see below)
 ├── spx/                    Backend & Software Developer   (same structure, plus public/projects/
 │                             screenshots and a per-project detail page — see below)
+├── gaf/                    Go (GoLang) & Backend Developer (same structure as spx)
+├── npx/                    Node.js & Backend Developer     (same structure as spx)
 │
 ├── .gitignore
 └── README.md               this file
@@ -148,12 +154,12 @@ options, ATS notes and troubleshooting. Start there when you want to change what
 You need [Node.js 18 or newer](https://nodejs.org).
 
 ```bash
-cd wnx             # or anj, dts, pyj, dcr, spx
+cd wnx             # or anj, ptd, pyj, dcr, spx, gaf, npx
 npm install
 npm run dev        # http://localhost:5173, live reload
 ```
 
-Each folder is independent — you don't need the other five installed.
+Each folder is independent — you don't need the other seven installed.
 
 To check a production build before pushing:
 
@@ -166,7 +172,7 @@ npm run preview
 
 ## The `wnx` site — Full-Stack Web Developer
 
-`wnx` is built from the same React app as the other five sites, with one addition: its
+`wnx` is built from the same React app as the other seven sites, with one addition: its
 **Work** section (`src/sections/Projects.jsx`) supports an optional screenshot per project card.
 
 - **Content:** `wnx/src/config/content.yml` → the `projects.items` list. Each item can include:
@@ -193,13 +199,23 @@ npm run preview
 
 ---
 
-## The `spx` site — Backend & Software Developer
+## The `spx`, `gaf` and `npx` sites — backend-focused developer profiles
 
-`spx` is built from the same React app as `wnx` (same screenshot-card support), plus one more
-thing: a project can open its **own dedicated page** instead of just expanding inline — with a
-full-size image gallery and two "← Back to home" links (top and bottom of the page).
+These three are built from the same React app as `wnx` (same screenshot-card support), plus one
+more thing: a project can open its **own dedicated page** instead of just expanding inline — with
+a full-size image gallery and two "← Back to home" links (top and bottom of the page).
 
-- **Content:** `spx/src/config/content.yml` → the `projects.items` list. Add a `slug` to any
+They share the same nine project case studies and the same structure; only the hero, positioning
+copy, skills ordering and SEO keywords differ, to lead with a different primary language:
+
+- **`spx`** — Backend & Software Developer, leads with the full seven-language spread (Node.js,
+  Python, Java, Go, C#, Ruby, PHP) with no single language foregrounded.
+- **`gaf`** — Go (GoLang) & Backend Developer, leads with Go specifically (Disney ABC and Live
+  Nation/Ticketmaster experience), the other six languages listed as also-shipped.
+- **`npx`** — Node.js & Backend Developer, leads with Node.js/Express specifically (Intuit, ADP
+  and Disney ABC experience), the other six languages listed as also-shipped.
+
+- **Content:** `<folder>/src/config/content.yml` → the `projects.items` list. Add a `slug` to any
   item to give it a detail page, and an `images` list for the gallery on that page:
   ```yaml
   - title: "Project name"
@@ -224,17 +240,19 @@ full-size image gallery and two "← Back to home" links (top and bottom of the 
 - **Routing:** the detail page lives at `#/projects/<slug>` (`src/pages/ProjectDetail.jsx`,
   wired into `src/App.jsx`). It reads the same `content.yml` — there's no second place to edit
   a project's text.
-- **Screenshots live at:** `spx/public/projects/*.jpg`. The `Stock Movers Predictor` project
-  is the example already wired up with a detail page and a two-image gallery (dark and light
-  theme screenshots) — copy that entry in `content.yml` as the template for the next one.
-- Positioning covers backend delivery across Node.js, Python, Java, Go, C#, Ruby and PHP — see
-  `content.yml` for the exact copy before editing it.
+- **Screenshots live at:** `<folder>/public/projects/*.jpg` — identical files copied across all
+  three. The `Stock Movers Predictor` project is the example already wired up with a detail page
+  and a two-image gallery (dark and light theme screenshots) — copy that entry in `content.yml`
+  as the template for the next one.
+- To add a fourth language-led variant, duplicate any of these three folders, then edit the hero,
+  positioning, skills-group ordering, closing CTA and `site.yml` SEO fields to lead with the new
+  language — the project case studies and recommendations don't need to change.
 
 ---
 
 ## Current configuration
 
-Applied identically across all six sites:
+Applied identically across all eight sites:
 
 - **Theme:** locked to **Soft Gray** (`defaultTheme` in `themes.yml`). `showThemeSwitcher: false`,
   so the switcher is hidden and every visitor sees the same palette. Any theme a visitor stored on
@@ -245,12 +263,15 @@ Applied identically across all six sites:
   landing page does the same thing with its own inline copy of the number.
 - **Contact channels:** `contact.methods: [form]` — message form only, per site. Change to
   `[form, sms]`, `[sms]` or `[]` in that site's `site.yml`.
+- **Contact form fields:** name, company, email, phone (optional) and message. There is no
+  "role you're hiring for" field on any site — it was removed from `ContactForm.jsx` and from
+  `site.yml` (`roleFieldLabel` / `roleFieldPlaceholder` no longer exist) on all eight sites.
 - **No email address** appears anywhere in any page source.
 - **No LinkedIn link** anywhere.
 
 ### To change the theme
 
-Edit `themes.yml` in **each** of the six folders:
+Edit `themes.yml` in **each** of the eight folders:
 
 ```yaml
 defaultTheme: soft-blue        # clean-white | soft-gray | warm-cream | soft-blue | light-beige
@@ -259,7 +280,7 @@ showThemeSwitcher: true        # true puts the switcher back in the header
 
 ### To change the phone number
 
-Two places: `contact.sms.number` in each of the six `site.yml` files, and the `parts` array in
+Two places: `contact.sms.number` in each of the eight `site.yml` files, and the `parts` array in
 the script at the bottom of `root/index.html`.
 
 ### Renaming a folder
@@ -270,6 +291,10 @@ Four places, all plain text — no code changes:
 2. `.github/workflows/deploy.yml` — the `for folder in …` line (and the comment header)
 3. That site's `src/config/site.yml` — `seo.siteUrl`, once you've set it
 4. This README, so you don't lose track of which slug is which role
+
+Also update the `TITLE` constant near the top of that folder's `src/components/ContactForm.jsx`
+— it's sent along with every form submission so you can tell which site a message came from, and
+it's plain text with no code logic attached.
 
 ---
 
@@ -287,14 +312,15 @@ contact:
 ```
 
 Until you do, the form shows a "not connected yet" notice on screen. You can use the same
-Formspree form for all six, or six separate ones if you want to know which site a message came
-from — with opaque folder names, six separate forms is the easier way to tell.
+Formspree form for all eight, or eight separate ones if you want to know which site a message
+came from — with opaque folder names, separate forms (or the `TITLE` constant above) is the
+easier way to tell.
 
 **2. Set the site URL** in each `site.yml` so link previews and canonical tags resolve:
 
 ```yaml
 seo:
-  siteUrl: "https://anoshf.github.io/dcr"      # matching folder per site
+  siteUrl: "https://anoshf.github.io/p/dcr"      # matching folder per site
 ```
 
 **3. Optionally add a resume PDF.** Drop a role-tailored PDF at `<folder>/public/resume.pdf` and
@@ -307,13 +333,13 @@ set `resume.enabled: true` in that site's `site.yml`.
 `root/index.html` is what someone sees if they trim a URL back to the domain root. It is a plain
 HTML file with no build step.
 
-It deliberately **does not link to the six role sites**. Each site is tailored to one job, and a
-recruiter who arrived for one role shouldn't be shown that five other versions exist — that
-reads as scattered rather than focused. With opaque folder names the six are effectively
+It deliberately **does not link to the eight role sites**. Each site is tailored to one job, and a
+recruiter who arrived for one role shouldn't be shown that seven other versions exist — that
+reads as scattered rather than focused. With opaque folder names the eight are effectively
 unlisted: they aren't linked from anywhere, so they're reachable only by the exact URL you send.
 
 To change it, edit the file. To remove it, delete the "Add the root landing page and its assets"
-step from the workflow; the six role sites are unaffected either way.
+step from the workflow; the eight role sites are unaffected either way.
 
 ---
 
