@@ -1,8 +1,8 @@
 import Reveal from '../components/Reveal'
 import { content, hasItems, clean } from '../lib/config'
 
-export default function Credentials() {
-  const c = content?.credentials || {}
+export default function Credentials({ credentials = content?.credentials || {} } = {}) {
+  const c = credentials
   const certs = (hasItems(c.certifications) ? c.certifications : []).filter((x) => clean(x?.name))
   const edu = (hasItems(c.education) ? c.education : []).filter((x) => clean(x?.degree))
   if (!certs.length && !edu.length) return null
@@ -35,7 +35,7 @@ export default function Credentials() {
 
           {certs.length > 0 && (
             <Reveal className="card creds__col" delay={70}>
-              <h3 className="creds__title">Certifications &amp; focus areas</h3>
+              <h3 className="creds__title">{clean(c.focusHeading, 'Certifications & focus areas')}</h3>
               <ul className="creds__list">
                 {certs.map((x, i) => (
                   <li className="cred" key={i}>

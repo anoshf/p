@@ -15,6 +15,7 @@ import Credentials from '../../../pyj/src/sections/Credentials';
 import Closing from '../../../pyj/src/sections/Closing';
 import { Contact, Portfolio, Process, Services } from '../consulting';
 import headshot from '../assets/headshot.jpg';
+import { closing, credentials, hero, positioning, role, skills } from './content';
 import '../../../pyj/src/styles/global.css';
 import '../../../pyj/src/styles/layout.css';
 import '../../../pyj/src/styles/sections.css';
@@ -28,24 +29,15 @@ const consultingNavigation = [
 ];
 const navigation = [
   { label: 'Home', id: 'top' },
-  { label: content.positioning.heading, id: 'positioning' },
+  { label: positioning.heading, id: 'positioning' },
   { label: content.highlights.heading, id: 'highlights' },
   { label: content.skills.heading, id: 'skills' },
   { label: content.projects.heading, id: 'projects' },
   { label: content.recommendations.heading, id: 'recommendations' },
   { label: content.credentials.heading, id: 'credentials' },
   ...consultingNavigation,
-  { label: content.closing.heading, id: 'hiring' },
+  { label: closing.heading, id: 'hiring' },
 ];
-
-const updateYears = text => text.replace(/\b(?:15|18)\+ (?:years|yrs)\b/gi, '20+ years');
-const hero = {
-  ...content.hero,
-  eyebrow: updateYears(content.hero.eyebrow),
-  subheadline: updateYears(content.hero.subheadline),
-  proofPoints: content.hero.proofPoints.map(point => ({ ...point, value: updateYears(point.value) })),
-};
-const closing = { ...content.closing, body: updateYears(content.closing.body) };
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -107,13 +99,13 @@ function App() {
       <Header />
       <main id="main">
         <Hero hero={hero} photoSrc={headshot} contactHref="#contact" />
-        <Positioning />
+        <Positioning positioning={positioning} />
         <div className="v3-featured">
           <Highlights />
-          <Skills />
+          <Skills skills={skills} />
           <Projects />
           <Recommendations />
-          <Credentials />
+          <Credentials credentials={credentials} />
         </div>
         <div className="v3-consulting">
           <Services />
@@ -123,7 +115,7 @@ function App() {
         </div>
         <Closing id="hiring" closing={closing} contactHref="#contact" />
       </main>
-      <Footer homeHref="#top" contactHref="#contact" />
+      <Footer targetRole={role} homeHref="#top" contactHref="#contact" />
       <MobileContactBar contactHref="#contact" />
     </>
   );

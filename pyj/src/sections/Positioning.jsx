@@ -1,8 +1,8 @@
 import Reveal from '../components/Reveal'
 import { content, hasItems, clean } from '../lib/config'
 
-export default function Positioning() {
-  const p = content?.positioning || {}
+export default function Positioning({ positioning = content?.positioning || {} } = {}) {
+  const p = positioning
   const pillars = (hasItems(p.pillars) ? p.pillars : []).filter((x) => clean(x?.title))
   if (!pillars.length) return null
 

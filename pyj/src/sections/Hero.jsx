@@ -1,11 +1,15 @@
+import { version } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import { IconArrowRight, IconDownload, IconPin } from '../components/Icons'
 import { content, site, get, hasItems, clean } from '../lib/config'
 
-export default function Hero() {
-  const h = content?.hero || {}
-  const photo = clean(get(site, 'identity.photo'), '')
+// React 18 forwards the lowercase attribute. React 19 exposes it as a DOM prop.
+const priority = { [parseInt(version, 10) >= 19 ? 'fetchPriority' : 'fetchpriority']: 'high' }
+
+export default function Hero({ hero = content?.hero || {}, photoSrc, contactHref } = {}) {
+  const h = hero
+  const photo = photoSrc || clean(get(site, 'identity.photo'), '')
   const photoAlt = clean(get(site, 'identity.photoAlt'), clean(h.name, 'Profile photo'))
   const location = clean(get(site, 'identity.location'), '')
   const showBadge = get(site, 'options.showAvailabilityBadge', true)
@@ -21,8 +25,11 @@ export default function Hero() {
 
   const primary = h.primaryCta || { label: 'Contact me', to: '/contact' }
   const secondary = h.secondaryCta
+  const ContactLink = contactHref ? 'a' : Link
+  const contactTarget = contactHref ? { href: contactHref } : { to: primary.to || '/contact' }
 
   const scrollTo = (e, hash) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
     e.preventDefault()
     document
       .getElementById(String(hash).replace('#', ''))
@@ -54,7 +61,7 @@ export default function Hero() {
                 alt={photoAlt}
                 width="160"
                 height="160"
-                fetchpriority="high"
+                {...priority}
                 decoding="async"
               />
             )}
@@ -88,10 +95,10 @@ export default function Hero() {
           )}
 
           <Reveal className="hero__actions" delay={180}>
-            <Link to={primary.to || '/contact'} className="btn btn--lg">
+            <ContactLink {...contactTarget} className="btn btn--lg">
               {clean(primary.label, 'Contact me')}
               <IconArrowRight className="btn__icon" />
-            </Link>
+            </ContactLink>
 
             {secondary && clean(secondary.label) && (
               <a
@@ -141,7 +148,7 @@ export default function Hero() {
                 alt={photoAlt}
                 width="576"
                 height="626"
-                fetchpriority="high"
+                {...priority}
                 decoding="async"
               />
             </div>

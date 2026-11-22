@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { site, get, clean } from '../lib/config'
 
-export default function Footer() {
+export default function Footer({ homeHref, contactHref, targetRole } = {}) {
   const name = clean(get(site, 'identity.name'), '')
-  const role = clean(get(site, 'identity.targetRole'), '')
+  const role = clean(targetRole ?? get(site, 'identity.targetRole'), '')
   const location = clean(get(site, 'identity.location'), '')
   const note = clean(get(site, 'options.footerNote'), '')
   const year = new Date().getFullYear()
@@ -18,8 +18,8 @@ export default function Footer() {
         </div>
 
         <nav className="site-footer__links" aria-label="Footer">
-          <Link to="/">Home</Link>
-          <Link to="/contact">Contact</Link>
+          {homeHref ? <a href={homeHref}>Home</a> : <Link to="/">Home</Link>}
+          {contactHref ? <a href={contactHref}>Contact</a> : <Link to="/contact">Contact</Link>}
         </nav>
       </div>
 

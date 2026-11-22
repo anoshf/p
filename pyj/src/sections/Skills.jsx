@@ -1,8 +1,8 @@
 import Reveal from '../components/Reveal'
 import { content, hasItems, clean } from '../lib/config'
 
-export default function Skills() {
-  const s = content?.skills || {}
+export default function Skills({ skills = content?.skills || {} } = {}) {
+  const s = skills
   const groups = (hasItems(s.groups) ? s.groups : []).filter(
     (g) => clean(g?.name) && hasItems(g?.items)
   )
