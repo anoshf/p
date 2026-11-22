@@ -1,0 +1,212 @@
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.site-header .mobile-menu {
+  inset: 100% 0 auto;
+  max-height: calc(100dvh - var(--header-h));
+  border-bottom: 1px solid var(--c-border);
+  box-shadow: 0 12px 24px var(--c-shadow);
+}
+
+.site-header .mobile-menu__list {
+  margin-inline: auto;
+}
+
+.v3-sections-toggle span {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .site-header .v3-sections-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    width: auto;
+    padding-inline: var(--sp-3);
+    font: inherit;
+    font-weight: 650;
+  }
+
+  .v3-sections-toggle span {
+    display: inline;
+  }
+
+  .site-header .mobile-menu__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 var(--sp-5);
+  }
+}
+
+.v3-featured .section__title {
+  font-weight: 850;
+}
+
+.v3-consulting .section-label {
+  display: none;
+}
+
+.v3-consulting .section-head,
+.v3-consulting .contact-copy {
+  max-width: 65ch;
+}
+
+.v3-consulting h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--sp-3);
+}
+
+.v3-consulting .section-head p,
+.v3-consulting .contact-copy p,
+.v3-consulting .contact-form p,
+.v3-consulting .service p {
+  color: var(--c-text-muted);
+}
+
+.v3-consulting .service-grid,
+.v3-consulting .portfolio-grid,
+.v3-consulting .steps,
+.v3-consulting .contact-section {
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.v3-consulting .service-grid,
+.v3-consulting .portfolio-grid,
+.v3-consulting .steps {
+  margin-top: var(--sp-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+}
+
+.v3-consulting .service,
+.v3-consulting .portfolio,
+.v3-consulting .steps > div,
+.v3-consulting .contact-form,
+.v3-consulting .contact-methods a {
+  padding: var(--sp-5);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+}
+
+.v3-consulting .service h3,
+.v3-consulting .steps h3 {
+  margin-block: var(--sp-2);
+}
+
+.v3-consulting .service-icon,
+.v3-consulting .portfolio svg,
+.v3-consulting .steps b,
+.v3-consulting .contact-methods svg {
+  color: var(--c-accent);
+}
+
+.v3-consulting .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.v3-consulting .tags span {
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-accent-soft);
+  color: var(--c-accent-soft-text);
+  font-size: var(--fs-sm);
+}
+
+.v3-consulting .portfolio,
+.v3-consulting .contact-methods a {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--c-text);
+  text-decoration: none;
+}
+
+.v3-consulting .portfolio:hover,
+.v3-consulting .contact-methods a:hover {
+  background: var(--c-surface-hover);
+  border-color: var(--c-border-strong);
+}
+
+.v3-consulting .portfolio svg,
+.v3-consulting .contact-methods a > svg {
+  margin-inline-start: auto;
+  flex: none;
+}
+
+.v3-consulting .port-num {
+  display: none;
+}
+
+.v3-consulting .process-wrap {
+  background: var(--c-bg-alt);
+  border-block: 1px solid var(--c-border);
+  scroll-margin-top: calc(var(--header-h) + 8px);
+}
+
+.v3-consulting .contact-methods {
+  display: grid;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.v3-consulting .contact-methods a {
+  padding: var(--sp-3) var(--sp-4);
+  overflow-wrap: anywhere;
+}
+
+.v3-consulting .contact-methods strong,
+.v3-consulting .contact-methods small {
+  display: block;
+}
+
+.v3-consulting .form-note,
+.v3-consulting .device-note,
+.v3-consulting .footnote {
+  margin-top: var(--sp-3);
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.v3-consulting .contact-form label {
+  display: block;
+  margin: var(--sp-3) 0 var(--sp-1);
+  font-weight: 650;
+}
+
+.v3-consulting .contact-form :is(input:not([type="hidden"]), select, textarea) {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--c-bg);
+  color: var(--c-text);
+  font: inherit;
+}
+
+.v3-consulting .contact-form textarea {
+  resize: vertical;
+}
+
+.v3-consulting .contact-form .send,
+.v3-consulting .contact-form .status {
+  margin-top: var(--sp-4);
+}
+
+.v3-consulting .contact-form .send:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@media (min-width: 800px) {
+  .v3-consulting .contact-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-6);
+    align-items: start;
+  }
+}
