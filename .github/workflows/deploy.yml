@@ -1,4 +1,4 @@
-# Builds all eight role sites and publishes them as one GitHub Pages deployment.
+# Builds the eight role sites and the consulting site for GitHub Pages.
 #
 #   anj/     →  https://<username>.github.io/anj/      AI Cloud & Software Architect
 #   ptd/     →  https://<username>.github.io/ptd/      AI Platform Engineer
@@ -8,12 +8,13 @@
 #   spx/     →  https://<username>.github.io/spx/      Backend & Software Developer
 #   gaf/     →  https://<username>.github.io/gaf/      Go (GoLang) & Backend Developer
 #   npx/     →  https://<username>.github.io/npx/      Node.js & Backend Developer
+#   acon/    →  https://<username>.github.io/p/consulting/  Latest consulting version
 #   root/index.html  →  https://<username>.github.io/
 #
 # One-time setup in the repository:
 #   Settings → Pages → Build and deployment → Source: "GitHub Actions"
 #
-# After that, every push to main rebuilds and republishes all eight.
+# After that, every push to main rebuilds and republishes the sites.
 name: Build and deploy role sites
 
 on:
@@ -37,9 +38,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: '26'
           cache: npm
           cache-dependency-path: '*/package-lock.json'
 
@@ -63,6 +64,32 @@ jobs:
 
       - name: Add the root landing page and its assets
         run: cp -R root/. _site/
+
+      - name: Publish the latest consulting version
+        run: |
+          set -euo pipefail
+          npm ci --prefix acon
+          npm run build --prefix acon
+
+          latest_page="$(
+            for page in acon/dist/v*/index.html; do
+              version="${page#acon/dist/}"
+              version="${version%/index.html}"
+              if [[ -f "$page" && "$version" =~ ^v[1-9][0-9]*$ ]]; then
+                printf '%s\n' "$page"
+              fi
+            done | sort -V | tail -n 1
+          )"
+          if [[ -z "$latest_page" ]]; then
+            echo "::error::No numbered consulting build found in acon/dist"
+            exit 1
+          fi
+
+          mkdir -p _site/consulting
+          cp -R acon/dist/. _site/consulting/
+          # The landing page moves up one directory. Rebase its HTML asset URLs.
+          sed -E 's#((src|href)=")\.\./#\1./#g' "$latest_page" > _site/consulting/index.html
+          echo "Published $latest_page as consulting/index.html"
 
       - name: Show what will be published
         run: find _site -maxdepth 2 -type f | sort
