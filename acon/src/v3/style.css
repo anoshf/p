@@ -3,39 +3,67 @@
 }
 
 .site-header .mobile-menu {
-  inset: 100% 0 auto;
-  max-height: calc(100dvh - var(--header-h));
-  border-bottom: 1px solid var(--c-border);
+  position: absolute;
+  inset: 100% 0.75rem auto;
+  max-height: calc(100dvh - var(--header-h) - 1rem - env(safe-area-inset-bottom));
+  padding: 0.5rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
   box-shadow: 0 12px 24px var(--c-shadow);
+  overscroll-behavior: contain;
 }
 
-.site-header .mobile-menu__list {
-  margin-inline: auto;
+.site-header .v3-menu-toggle {
+  width: 44px;
+  height: 44px;
 }
 
-.v3-sections-toggle span {
-  display: none;
+.site-header .mobile-menu__list a {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0.5rem 0.85rem;
+  border-bottom: 0;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+}
+
+.site-header .mobile-menu__list a:is(:hover, :focus-visible, :active) {
+  background: var(--c-surface-hover);
+}
+
+.site-header .mobile-menu__list li:last-child {
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--c-border);
+}
+
+.site-header .mobile-menu__list a[href="#contact"] {
+  color: var(--c-accent-soft-text);
+  background: var(--c-accent-soft);
+}
+
+@media (min-width: 600px) {
+  .site-header .mobile-menu {
+    inset-inline-start: auto;
+    inset-inline-end: max(1.1rem, calc((100% - var(--container)) / 2 + 2.5rem));
+    width: 20rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .mobile-menu {
+    animation: none;
+  }
 }
 
 @media (min-width: 960px) {
-  .site-header .v3-sections-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-2);
-    width: auto;
-    padding-inline: var(--sp-3);
-    font: inherit;
-    font-weight: 650;
+  .site-nav__list {
+    gap: clamp(0.5rem, 1vw, 1rem);
   }
 
-  .v3-sections-toggle span {
-    display: inline;
-  }
-
-  .site-header .mobile-menu__list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0 var(--sp-5);
+  .site-header .v3-menu-toggle {
+    display: inline-grid;
   }
 }
 
@@ -65,7 +93,6 @@
 }
 
 .v3-consulting .service-grid,
-.v3-consulting .portfolio-grid,
 .v3-consulting .steps,
 .v3-consulting .contact-section {
   display: grid;
@@ -73,14 +100,12 @@
 }
 
 .v3-consulting .service-grid,
-.v3-consulting .portfolio-grid,
 .v3-consulting .steps {
   margin-top: var(--sp-5);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
 }
 
 .v3-consulting .service,
-.v3-consulting .portfolio,
 .v3-consulting .steps > div,
 .v3-consulting .contact-form,
 .v3-consulting .contact-methods a {
@@ -96,7 +121,6 @@
 }
 
 .v3-consulting .service-icon,
-.v3-consulting .portfolio svg,
 .v3-consulting .steps b,
 .v3-consulting .contact-methods svg {
   color: var(--c-accent);
@@ -117,7 +141,6 @@
   font-size: var(--fs-sm);
 }
 
-.v3-consulting .portfolio,
 .v3-consulting .contact-methods a {
   display: flex;
   align-items: center;
@@ -126,20 +149,14 @@
   text-decoration: none;
 }
 
-.v3-consulting .portfolio:hover,
 .v3-consulting .contact-methods a:hover {
   background: var(--c-surface-hover);
   border-color: var(--c-border-strong);
 }
 
-.v3-consulting .portfolio svg,
 .v3-consulting .contact-methods a > svg {
   margin-inline-start: auto;
   flex: none;
-}
-
-.v3-consulting .port-num {
-  display: none;
 }
 
 .v3-consulting .process-wrap {

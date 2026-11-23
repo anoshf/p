@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ArrowUpRight,
   Bot,
+  CheckCircle2,
   Cloud,
   Code2,
   Database,
@@ -12,7 +13,13 @@ import {
   Send,
   ShieldCheck,
 } from 'lucide-react';
+import './inquiry.css';
 
+const EMAILJS_ENDPOINT = 'https://api.emailjs.com/api/v1.0/email/send';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_320fibg';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_fnoa2ah';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '6Xr0XTpA3jjbIpFpJ';
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY?.trim();
 const EMAIL = 'anoshf@outlook.com',
   PHONE = '2132827919';
 const links = [
@@ -201,38 +208,104 @@ export function Process() {
 }
 
 export function Contact() {
-  const [status, setStatus] = useState('');
-  const [busy, setBusy] = useState(false);
+  const [status, setStatus] = useState('idle');
+  const [emailError, setEmailError] = useState(false);
+  const [captchaError, setCaptchaError] = useState('');
+  const sending = useRef(false);
+  const confirmation = useRef(null);
+  const captchaContainer = useRef(null);
+  const captchaWidget = useRef(null);
+
+  useEffect(() => {
+    if (!RECAPTCHA_SITE_KEY) return;
+
+    let active = true;
+    const container = captchaContainer.current;
+    const script = document.createElement('script');
+    function showCaptchaError() {
+      if (active) setCaptchaError('Verification is unavailable. Reload the page or email me directly.');
+    }
+    script.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+    script.async = true;
+    script.onerror = showCaptchaError;
+    script.onload = () => {
+      if (!window.grecaptcha?.ready) {
+        showCaptchaError();
+        return;
+      }
+      window.grecaptcha.ready(() => {
+        if (!active) return;
+        try {
+          captchaWidget.current = window.grecaptcha.render(container, {
+            sitekey: RECAPTCHA_SITE_KEY,
+            type: 'image',
+            size: 'compact',
+            callback: () => setCaptchaError(''),
+            'expired-callback': () => setCaptchaError('Verification expired. Please complete it again.'),
+            'error-callback': showCaptchaError,
+          });
+        } catch {
+          showCaptchaError();
+        }
+      });
+    };
+    document.head.append(script);
+    return () => {
+      active = false;
+      script.remove();
+      container.replaceChildren();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (status === 'sent') confirmation.current?.focus({ preventScroll: true });
+  }, [status]);
 
   async function submit(event) {
     event.preventDefault();
-    setBusy(true);
-    setStatus('');
-    const form = event.currentTarget;
+    if (sending.current) return;
+    const captchaResponse = captchaWidget.current === null
+      ? ''
+      : window.grecaptcha.getResponse(captchaWidget.current);
+    if (RECAPTCHA_SITE_KEY && !captchaResponse) {
+      setCaptchaError(current => current || 'Please complete the CAPTCHA before sending.');
+      return;
+    }
+    const data = new FormData(event.currentTarget);
+    const email = String(data.get('email')).trim();
+    const details = [
+      `Email: ${email}`,
+      data.get('company') && `Company: ${data.get('company')}`,
+      `Service: ${data.get('service')}`,
+    ].filter(Boolean).join('\n');
+
+    sending.current = true;
+    setStatus('sending');
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+      const response = await fetch(EMAILJS_ENDPOINT, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            from_name: data.get('name'),
+            reply_to: email,
+            message: data.get('message'),
+            details,
+            title: 'Consulting project inquiry',
+            ...(captchaResponse && { 'g-recaptcha-response': captchaResponse }),
+          },
+        }),
       });
-      const result = await response.json();
-      if (
-        !response.ok ||
-        result.success === false ||
-        result.success === 'false'
-      ) {
-        throw new Error('Submission not accepted');
-      }
-      setStatus(
-        'Thanks — your message was submitted. I’ll respond as soon as I can.',
-      );
-      form.reset();
+      if (!response.ok) throw new Error('Submission not accepted');
+      setStatus('sent');
     } catch {
-      setStatus(
-        'The form could not send your message. Please use the email link below instead.',
-      );
+      setStatus('error');
+      if (captchaWidget.current !== null) window.grecaptcha.reset(captchaWidget.current);
     } finally {
-      setBusy(false);
+      sending.current = false;
     }
   }
 
@@ -287,80 +360,99 @@ export function Contact() {
           app. On some computers, an app must be configured first.
         </p>
       </div>
-      <form className="contact-form" onSubmit={submit}>
-        <div className="form-top">
-          <h3>Start a conversation</h3>
-          <p>Share a few details and I'll get back to you.</p>
+      {status === 'sent' ? (
+        <div className="contact-form inquiry-success" role="status" tabIndex={-1} ref={confirmation}>
+          <CheckCircle2 aria-hidden="true" size={30} />
+          <span>email sent!</span>
         </div>
-        <input
-          type="hidden"
-          name="_subject"
-          value="New consulting inquiry from website"
-        />
-        <input type="hidden" name="_captcha" value="true" />
-        <label htmlFor="name">Your name *</label>
-        <input
-          id="name"
-          name="name"
-          placeholder="Jane Smith"
-          required
-          maxLength="100"
-        />
-        <label htmlFor="email">Email address *</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="jane@company.com"
-          required
-          maxLength="200"
-        />
-        <label htmlFor="company">
-          Company / organization <span>(optional)</span>
-        </label>
-        <input
-          id="company"
-          name="company"
-          placeholder="Your company or project"
-          maxLength="150"
-        />
-        <label htmlFor="service">What do you need help with? *</label>
-        <select id="service" name="service" required defaultValue="">
-          <option value="" disabled>
-            Select a service
-          </option>
-          {services.map((s) => (
-            <option key={s.title} value={s.title}>
-              {s.title}
+      ) : (
+        <form className="contact-form" onSubmit={submit}>
+          <div className="form-top">
+            <h3>Start a conversation</h3>
+            <p>Share a few details and I'll get back to you.</p>
+          </div>
+          <label htmlFor="name">Your name *</label>
+          <input
+            id="name"
+            name="name"
+            placeholder="Jane Smith"
+            required
+            maxLength="100"
+          />
+          <label htmlFor="email">Email address *</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            pattern="[^@]+@[^@]+[.][^@.]+"
+            placeholder="jane@company.com"
+            required
+            maxLength="200"
+            aria-invalid={emailError || undefined}
+            aria-describedby={emailError ? 'inquiry-email-error' : undefined}
+            onInvalid={(event) => {
+              event.preventDefault();
+              setEmailError(true);
+              event.currentTarget.focus();
+            }}
+            onChange={() => setEmailError(false)}
+          />
+          {emailError && (
+            <p id="inquiry-email-error" className="inquiry-error" role="alert">
+              please enter valid email address
+            </p>
+          )}
+          <label htmlFor="company">
+            Company / organization <span>(optional)</span>
+          </label>
+          <input
+            id="company"
+            name="company"
+            placeholder="Your company or project"
+            maxLength="150"
+          />
+          <label htmlFor="service">What do you need help with? *</label>
+          <select id="service" name="service" required defaultValue="">
+            <option value="" disabled>
+              Select a service
             </option>
-          ))}
-          <option value="Other / not sure">Other / not sure</option>
-        </select>
-        <label htmlFor="message">Tell me about your project *</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="What's the problem, your timeline, and what would success look like?"
-          required
-          maxLength="5000"
-        />
-        <button className="btn primary send" type="submit" disabled={busy}>
-          {busy ? 'Sending…' : 'Send project inquiry'} <Send size={17} />
-        </button>
-        <p className="form-note">
-          No obligation. Please don't include passwords, credentials or
-          confidential customer data.
-        </p>
-        {status && (
-          <p role="status" className="status">
-            {status}{' '}
-            {status.startsWith('The form') && (
-              <a href={`mailto:${EMAIL}`}>Email me directly</a>
-            )}
+            {services.map((s) => (
+              <option key={s.title} value={s.title}>
+                {s.title}
+              </option>
+            ))}
+            <option value="Other / not sure">Other / not sure</option>
+          </select>
+          <label htmlFor="message">Tell me about your project *</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="What's the problem, your timeline, and what would success look like?"
+            required
+            maxLength="5000"
+          />
+          {RECAPTCHA_SITE_KEY && (
+            <div className="inquiry-captcha">
+              <div ref={captchaContainer} />
+              {captchaError && <p className="inquiry-error" role="alert">{captchaError}</p>}
+            </div>
+          )}
+          <button className="btn primary send" type="submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending…' : 'Send project inquiry'} <Send size={17} />
+          </button>
+          <p className="form-note">
+            No obligation. Please don't include passwords, credentials or
+            confidential customer data.
           </p>
-        )}
-      </form>
+          {status === 'error' && (
+            <p role="alert" className="inquiry-error">
+              Your message could not be sent. <a href={`mailto:${EMAIL}`}>Email me directly</a>.
+            </p>
+          )}
+        </form>
+      )}
     </section>
   );
 }

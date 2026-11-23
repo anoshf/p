@@ -56,7 +56,7 @@ function Quote({ item, featured }) {
   )
 }
 
-export default function Recommendations() {
+export default function Recommendations({ heading = content?.recommendations?.heading } = {}) {
   const r = content?.recommendations || {}
   const all = (hasItems(r.items) ? r.items : []).filter((x) => clean(x?.quote))
   const [showAll, setShowAll] = useState(false)
@@ -73,7 +73,7 @@ export default function Recommendations() {
     <section className="section" id="recommendations">
       <div className="container">
         <Reveal className="section__head">
-          {clean(r.heading) && <h2 className="section__title">{clean(r.heading)}</h2>}
+          {clean(heading) && <h2 className="section__title">{clean(heading)}</h2>}
           {clean(r.subheading) && <p className="section__sub">{clean(r.subheading)}</p>}
         </Reveal>
 

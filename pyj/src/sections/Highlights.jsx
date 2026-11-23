@@ -1,8 +1,8 @@
 import Reveal from '../components/Reveal'
 import { content, hasItems, clean } from '../lib/config'
 
-export default function Highlights() {
-  const h = content?.highlights || {}
+export default function Highlights({ highlights = content?.highlights || {} } = {}) {
+  const h = highlights
   const items = (hasItems(h.items) ? h.items : []).filter((x) => clean(x?.value))
   if (!items.length) return null
 
@@ -20,6 +20,7 @@ export default function Highlights() {
               <p className="metric__value">{clean(m.value)}</p>
               <p className="metric__label">{clean(m.label)}</p>
               {clean(m.detail) && <p className="metric__detail">{clean(m.detail)}</p>}
+              {m.source && <a className="metric__source" href={m.source.url}>{m.source.label}</a>}
             </Reveal>
           ))}
         </ul>

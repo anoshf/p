@@ -1,0 +1,38 @@
+.contact-form.inquiry-success {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  color: #14653b;
+  background: #edf9f0;
+  font-weight: 700;
+  animation: inquiry-confirmation-in 240ms ease-out;
+}
+
+.contact-form p.inquiry-error {
+  margin-block: 0.4rem 0.75rem;
+  color: #b42318;
+}
+
+.contact-form input[aria-invalid="true"] {
+  border-color: currentColor;
+  color: #b42318;
+}
+
+.inquiry-captcha {
+  margin-block: 0.75rem;
+}
+
+@keyframes inquiry-confirmation-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form.inquiry-success {
+    animation: none;
+  }
+}

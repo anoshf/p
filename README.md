@@ -1,7 +1,6 @@
 # Anosh Fallah — role-targeted portfolio sites
 
-Eight separate portfolio sites in one repository, each tailored to a different job title, all
-published together by a single GitHub Actions workflow.
+Eight role-targeted portfolio sites and an engineering consulting site share one GitHub Actions deployment.
 
 | Folder | Role | Published at |
 |---|---|---|
@@ -13,6 +12,7 @@ published together by a single GitHub Actions workflow.
 | `spx/` | Backend & Software Developer | `https://anoshf.github.io/p/spx/` |
 | `gaf/` | Go (GoLang) & Backend Developer | `https://anoshf.github.io/p/gaf/` |
 | `npx/` | Node.js & Backend Developer | `https://anoshf.github.io/p/npx/` |
+| [`acon/`](acon/README.md) | Engineering consulting | [Live site](https://anoshf.github.io/p/consulting/) |
 | `root/` | Neutral landing card | `https://anoshf.github.io/p/` |
 
 `anoshf` is the GitHub username these URLs are built for.
@@ -69,11 +69,9 @@ apps that have to be built, and the branch option would publish the unbuilt sour
 ### 4. Wait for the first build
 
 Open the **Actions** tab. The "Build and deploy role sites" run takes roughly two to three
-minutes: it installs and builds all eight sites, assembles them into one folder, and publishes.
+minutes. It builds the role sites and consulting site, then publishes them together.
 
-When it's green, all eight URLs above are live.
-
-From then on, **every push to `main` rebuilds and republishes all eight automatically.**
+Every push to `main` rebuilds and republishes the sites.
 
 ---
 
@@ -88,6 +86,8 @@ for each of anj, ptd, pyj, dcr, wnx, spx, gaf, npx:
     verify dist/index.html exists, else fail the run
     copy dist → _site/<folder>/
 copy root/ → _site/
+build acon/ and copy its numbered routes → _site/consulting/
+use the highest numbered consulting build for _site/consulting/index.html
 publish _site as the Pages artifact
 ```
 
@@ -151,7 +151,7 @@ options, ATS notes and troubleshooting. Start there when you want to change what
 
 ## Working on a site locally
 
-You need [Node.js 18 or newer](https://nodejs.org).
+Use Node.js 26 to match GitHub Actions.
 
 ```bash
 cd wnx             # or anj, ptd, pyj, dcr, spx, gaf, npx

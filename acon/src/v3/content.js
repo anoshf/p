@@ -79,9 +79,3 @@ export const credentials = {
     { name: 'Testing & code quality', issuer: 'Automated testing, code review, observability, and CI/CD' },
   ],
 };
-
-export const closing = {
-  heading: 'Have a project to discuss?',
-  body: 'Tell me what you’re building or where you’re stuck. We can scope an integration, review an architecture, or investigate a production performance issue.',
-  ctaLabel: 'Contact me',
-};

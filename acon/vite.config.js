@@ -11,8 +11,27 @@ const versionInputs = Object.fromEntries(
     .filter(([, page]) => existsSync(page))
 );
 
+function redirectVersionDirectory(req, res, next) {
+  const [path, query] = (req.url || '').split(/\?(.*)/s, 2);
+  if (!Object.hasOwn(versionInputs, path.slice(1))) return next();
+
+  res.writeHead(307, { Location: `${path}/${query === undefined ? '' : `?${query}`}` });
+  res.end();
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'consulting-version-urls',
+      configureServer(server) {
+        server.middlewares.use(redirectVersionDirectory);
+      },
+      configurePreviewServer(server) {
+        server.middlewares.use(redirectVersionDirectory);
+      },
+    },
+  ],
   base: './',
   resolve: { dedupe: ['react', 'react-dom', 'react-router-dom', 'js-yaml'] },
   server: {
