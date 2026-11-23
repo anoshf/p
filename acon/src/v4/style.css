@@ -1,3 +1,18 @@
+.hero__section-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.35rem, 1.5vw, 0.7rem);
+  max-width: 34rem;
+}
+
+.hero__section-links .btn {
+  min-height: 44px;
+  padding-inline: 0.6rem;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .metrics {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }

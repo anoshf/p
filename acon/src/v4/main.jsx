@@ -7,7 +7,17 @@ import './style.css';
 
 const heroContent = {
   ...hero,
-  proofPoints: hero.proofPoints.slice(-1),
+  proofPoints: [
+    { value: '10×', label: 'Faster batch execution · Adobe Research' },
+    { value: '≈90%', label: 'Lower average response time · Zomato' },
+    { value: '99.99%', label: 'Event ingestion availability · LaunchDarkly' },
+    ...hero.proofPoints.slice(-1),
+  ],
+  sectionLinks: [
+    { label: 'Contact me', to: '#contact' },
+    { label: 'See the work', to: '#projects' },
+    { label: 'Services', to: '#services' },
+  ],
 };
 
 applyTheme(resolveInitialTheme());
