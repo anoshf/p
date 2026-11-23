@@ -25,6 +25,7 @@ export default function Hero({ hero = content?.hero || {}, photoSrc, contactHref
 
   const primary = h.primaryCta || { label: 'Contact me', to: '/contact' }
   const secondary = h.secondaryCta
+  const sectionLinks = hasItems(h.sectionLinks) ? h.sectionLinks : []
   const ContactLink = contactHref ? 'a' : Link
   const contactTarget = contactHref ? { href: contactHref } : { to: primary.to || '/contact' }
 
@@ -94,33 +95,43 @@ export default function Hero({ hero = content?.hero || {}, photoSrc, contactHref
             </Reveal>
           )}
 
-          <Reveal className="hero__actions" delay={180}>
-            <ContactLink {...contactTarget} className="btn btn--lg">
-              {clean(primary.label, 'Contact me')}
-              <IconArrowRight className="btn__icon" />
-            </ContactLink>
+          {sectionLinks.length > 0 ? (
+            <Reveal as="nav" aria-label="Explore this page" className="hero__actions hero__section-links" delay={180}>
+              {sectionLinks.map(({ label, to }, index) => (
+                <a key={to} href={to} className={`btn btn--lg${index === 0 ? '' : ' btn--ghost'}`}>
+                  {label}
+                </a>
+              ))}
+            </Reveal>
+          ) : (
+            <Reveal className="hero__actions" delay={180}>
+              <ContactLink {...contactTarget} className="btn btn--lg">
+                {clean(primary.label, 'Contact me')}
+                <IconArrowRight className="btn__icon" />
+              </ContactLink>
 
-            {secondary && clean(secondary.label) && (
-              <a
-                href={secondary.to}
-                className="btn btn--lg btn--ghost"
-                onClick={
-                  String(secondary.to || '').startsWith('#')
-                    ? (e) => scrollTo(e, secondary.to)
-                    : undefined
-                }
-              >
-                {clean(secondary.label)}
-              </a>
-            )}
+              {secondary && clean(secondary.label) && (
+                <a
+                  href={secondary.to}
+                  className="btn btn--lg btn--ghost"
+                  onClick={
+                    String(secondary.to || '').startsWith('#')
+                      ? (e) => scrollTo(e, secondary.to)
+                      : undefined
+                  }
+                >
+                  {clean(secondary.label)}
+                </a>
+              )}
 
-            {resumeOn && (
-              <a href={resumeFile} className="btn btn--lg btn--ghost" download>
-                <IconDownload className="btn__icon" />
-                {resumeLabel}
-              </a>
-            )}
-          </Reveal>
+              {resumeOn && (
+                <a href={resumeFile} className="btn btn--lg btn--ghost" download>
+                  <IconDownload className="btn__icon" />
+                  {resumeLabel}
+                </a>
+              )}
+            </Reveal>
+          )}
 
           {(quickFacts.length > 0 || location) && (
             <Reveal as="ul" className="hero__facts" delay={210}>
